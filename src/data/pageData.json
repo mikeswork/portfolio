@@ -1,0 +1,35 @@
+{
+    "pages": [
+        {
+            "title": "Web Dev",
+            "to": "/webdev",
+            "htmlContent": [
+                {
+                    "title": "Section 1",
+                    "img": "",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit lacus, tincidunt in urna quis, facilisis vestibulum leo. Mauris sed porta elit, sit amet suscipit nunc. Morbi ullamcorper libero ac lacus vestibulum, id viverra justo posuere. Ut vehicula vel libero pulvinar congue. Integer quis dui vitae turpis faucibus mattis in vel eros. Donec augue ipsum, tristique sit amet aliquam quis, accumsan a arcu. Sed eget consequat purus, non imperdiet lectus. Quisque laoreet elit vitae facilisis suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut fringilla at enim a feugiat. Proin et ultricies nibh, sit amet tristique justo. Etiam ultrices tincidunt fermentum."
+                },
+                {
+                    "title": "Section 2",
+                    "img": "",
+                    "text": "Aliquam eget aliquam purus, a luctus augue. Mauris sed massa mauris. Nulla vel luctus magna. Integer eleifend sem vitae ipsum sagittis, in congue justo venenatis. Proin nulla urna, porttitor vitae rhoncus et, tristique tincidunt lorem. Vivamus euismod eros vitae rutrum semper. Cras sit amet mi sed magna aliquam elementum. Donec fermentum efficitur odio eget tempus. Donec a tristique metus. Aenean sit amet nibh tincidunt, pretium nunc nec, tempus dui. In a ex elementum, eleifend sem eget, faucibus ipsum. Proin eu magna gravida, faucibus ex et, venenatis libero. In ac orci magna."
+                }
+            ]
+        },
+        {
+            "title": "Video",
+            "to": "/video",
+            "htmlContent": []
+        },
+        {
+            "title": "Sketches",
+            "to": "/sketches",
+            "htmlContent": []
+        },
+        {
+            "title": "Resume",
+            "to": "/resume",
+            "htmlContent": []
+        }
+    ]
+}

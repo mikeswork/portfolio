@@ -1,38 +1,75 @@
+/* width */
+::-webkit-scrollbar {
+  width: 1vw;
+  min-width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.75); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+body, .root {
+  overflow: hidden;
+  background-color: black;
+  display: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  background-color: black;
+  background-image: url('img/background_2.jpg');
+  background-size: cover;
+  background-position: center;
+
+  perspective: 100vmin;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-vid {
+  position: fixed;
+  left: -1vw;
+  right: -1vw;
+  top: -1vh;
+  bottom: -1vh;
+  width: 102vw;
+  height: 102vh;
+  object-fit: fill;
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (prefers-reduced-motion: no-preference) {
+  .App.flash .bg-vid {
+    animation: App-flash 1 1s linear;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@keyframes App-flash {
+  5% {
+    filter: brightness(1.25);
+  }
+
+  7% {
+    filter: brightness(1) sepia(1) opacity(0.2);
   }
 }
