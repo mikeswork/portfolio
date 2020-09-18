@@ -1,0 +1,27 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.07rem;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+	background-color: black;
+	background-image: url("./img/mountains-bg.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}

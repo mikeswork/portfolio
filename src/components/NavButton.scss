@@ -1,0 +1,62 @@
+@import '../common.scss';
+
+$trans-dur: 0.1s;
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    margin: 4px 0;
+    @include drop-shadow;
+    transition: all $trans-dur;
+
+    &:nth-child(1) {
+        @include twitch-down(1s, 15px);
+    }
+
+    &:nth-child(2) {
+        min-width: 225px;
+        @include twitch-down(1.05s, 15px);
+    }
+
+    &:nth-child(3) {
+        min-width: 200px;
+        @include twitch-down(1.1s, 15px);
+    }
+
+    .btn-bg {
+        content: '';
+        @include abs;
+
+        background-color: transparent;
+        border-top: 28px solid #ffffffcc;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        height: 0;
+        z-index: -1;
+
+        transition: all $trans-dur;
+    }
+
+    .btn-text {
+        margin-top: 3px;
+        color: #0b1b31;
+
+        transition: all $trans-dur;
+    }
+
+    &:hover {
+        .btn-bg {
+            border-top-color: #333;
+            transform: scaleX(1.25);
+        }
+        .btn-text {
+            color: white;
+        }
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}

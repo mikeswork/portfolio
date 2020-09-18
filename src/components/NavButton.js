@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Link } from "react-router-dom";
-import './Button.css';
-import './NavButton.css';
+import './NavButton.scss';
 
 class NavButton extends PureComponent {
     render() {
@@ -11,7 +9,10 @@ class NavButton extends PureComponent {
             classNames += " clicked"
 
         return (
-           <Link to={this.props.to} className={classNames}>{this.props.text}</Link>
+            <a href={this.props.to} className={classNames}>
+                <div className="btn-bg"></div>
+                <div className="btn-text">{this.props.text}</div>
+            </a>
         )
     }
 }

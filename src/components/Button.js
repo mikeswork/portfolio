@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import './Button.css';
+import './Button.scss';
 
 class Button extends PureComponent {
     render() {

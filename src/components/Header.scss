@@ -1,0 +1,15 @@
+@import '../common.scss';
+
+h1 {
+    @include drop-shadow;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.8em;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    background-color: #4b5e7a;
+    mix-blend-mode: multiply;
+
+    margin-top: 5vw;
+}
