@@ -31,6 +31,8 @@
             transform: translateY(0)
         }
 	}
+}
 
-    //$name: propertyAlternate-#{unique-id()}
+@mixin letter-space {
+    letter-spacing: 0.08em;
 }

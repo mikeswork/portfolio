@@ -2,7 +2,7 @@
     "pages": [
         {
             "title": "Web Dev",
-            "to": "#webdev",
+            "to": "/webdev/#webdev",
             "htmlContent": [
                 {
                     "title": "Section 1",
@@ -18,12 +18,12 @@
         },
         {
             "title": "Video",
-            "to": "#video",
+            "to": "/video/#video",
             "htmlContent": []
         },
         {
             "title": "Resume",
-            "to": "#resume",
+            "to": "/resume/#resume",
             "htmlContent": []
         }
     ]

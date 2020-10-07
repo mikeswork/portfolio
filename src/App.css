@@ -1,39 +1,21 @@
 /* width */
 ::-webkit-scrollbar {
   width: 1vw;
-  min-width: 10px;
+  min-width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.1); 
+    background: rgba(0,0,0,0.75); 
+     
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.75); 
+    background: rgba(255,255,255,0.1);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,0.15);
-}
-
-.App {
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App.flash .bg-vid {
-    animation: App-flash 1 1s linear;
-  }
-}
-
-@keyframes App-flash {
-  5% {
-    filter: brightness(1.25);
-  }
-
-  7% {
-    filter: brightness(1) sepia(1) opacity(0.2);
-  }
 }

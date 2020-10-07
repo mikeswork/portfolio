@@ -1,24 +1,51 @@
-import React, { PureComponent } from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
 import NavButton from "./NavButton";
-import "./Nav.scss";
+import { headerMode } from "./Header";
 
-class Nav extends PureComponent {
-	nextId() {
-		this.uniqueId = this.uniqueId || 0;
-		return this.uniqueId++;
-	}
+const FullBody = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 41vh;
+`;
 
-	render() {
-		return (
-			<div className="nav">
-				{this.props.pages.map((page) => {
-					return (
-						<NavButton key={this.nextId()} text={page.title} to={page.to} currPage={this.props.currPage} />
-					);
-				})}
-			</div>
-		);
-	}
+const TopBottomBody = styled(FullBody)`
+	flex-direction: row;
+	justify-content: center;
+	margin-top: unset;
+`;
+
+export default function Nav({ mode = headerMode.default, pages, currPage }) {
+	var uniqueId = 0;
+
+	const [animateBtns, setAnimateBtns] = useState(mode === headerMode.full);
+	const Body = mode === headerMode.full ? FullBody : TopBottomBody;
+
+	const isInteracting = (mouseOver) => {
+        if (mode === headerMode.full) {
+            if (mouseOver && animateBtns) {
+                setAnimateBtns(false);
+            } else if (!mouseOver && !animateBtns) {
+                setAnimateBtns(true);
+            }
+        }
+	};
+
+	return (
+		<Body onMouseOver={isInteracting.bind(this, true)} onMouseOut={isInteracting.bind(this, false)}>
+			{pages.map((page) => {
+				return (
+					<NavButton
+						key={uniqueId++}
+						text={page.title}
+						to={page.to}
+						currPage={currPage}
+						mode={mode}
+						animate={animateBtns}
+					/>
+				);
+			})}
+		</Body>
+	);
 }
-
-export default Nav;

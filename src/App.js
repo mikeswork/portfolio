@@ -1,19 +1,46 @@
-import React, { PureComponent } from "react";
-import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header, { headerMode } from "./components/Header";
 import WebSection from "./components/WebSection";
+import Video from "./components/VideoSection";
+import Resume from "./components/ResumeSection";
 
 import "./App.css";
 
-class App extends PureComponent {
-	render() {
-		return (
-			<div className="App" id="mainApp">
-				<Header />
+export default function App() {
+    const [showSecondHead, setShowSecondHead] = useState(false);
 
+	useEffect(() => {
+		// console.log("[useEffect]")
+		if (
+			"IntersectionObserver" in window &&
+			"IntersectionObserverEntry" in window &&
+			"intersectionRatio" in window.IntersectionObserverEntry.prototype
+		) {
+			let observer = new IntersectionObserver((entries) => {
+				setShowSecondHead(entries[0].boundingClientRect.y < 0);
+			});
+
+			observer.observe(document.querySelector("#observer-anchor"));
+
+			return () => {
+				observer.disconnect();
+			};
+		}
+	});
+
+	return (
+		<Router>
+			<div className="App viewing-content" id="mainApp">
+				<Header id="home" />
+				
+                <div id="observer-anchor" />
+				<Header mode={headerMode.stickTop} visible={showSecondHead} to={"/home/#home"} />
+				
                 <WebSection />
+				<Video />
+				<Resume />
 			</div>
-		);
-	}
+		</Router>
+	);
 }
-
-export default App;
