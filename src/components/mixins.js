@@ -1,7 +1,7 @@
-import { css, keyframes } from 'styled-components';
+import { keyframes, css } from 'styled-components';
 
 export function abs(center = false) {
-    return css`
+    return `
         position: absolute;
         top: 0;
         right: 0;
@@ -15,7 +15,7 @@ export function abs(center = false) {
 }
 
 export function dropShadow() {
-    return css`
+    return `
         filter: drop-shadow(3px 3px 5px #00000070);
     `
 }
@@ -40,7 +40,7 @@ export function twitchDown(delay = `0s`, distance = `25px`) {
 }
 
 export function letterSpace() {
-    return css`
+    return `
         letter-spacing: 0.08em;
     `
 }

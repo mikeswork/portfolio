@@ -17,13 +17,13 @@
             ]
         },
         {
-            "title": "Video",
-            "to": "/video/#video",
+            "title": "Resume",
+            "to": "/resume/#resume",
             "htmlContent": []
         },
         {
-            "title": "Resume",
-            "to": "/resume/#resume",
+            "title": "Video",
+            "to": "/video/#video",
             "htmlContent": []
         }
     ]

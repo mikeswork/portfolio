@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Header, { headerMode } from "./components/Header";
-import WebSection from "./components/WebSection";
-import Video from "./components/VideoSection";
-import Resume from "./components/ResumeSection";
+import Section from "./components/Section";
 
 import "./App.css";
 
@@ -36,10 +34,12 @@ export default function App() {
 				
                 <div id="observer-anchor" />
 				<Header mode={headerMode.stickTop} visible={showSecondHead} to={"/home/#home"} />
-				
-                <WebSection />
-				<Video />
-				<Resume />
+
+                <Section id="webdev" title="Web Dev">
+                    Sites developed:
+                </Section>
+                <Section id="resume" title="Resume"></Section>
+                <Section id="video" title="Video"></Section>
 			</div>
 		</Router>
 	);

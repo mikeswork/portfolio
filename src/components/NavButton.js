@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import * as mixins from './mixins'
 
 const transDur = `0.1s`;
 
-const MainLink = styled(NavLink)`
+const Link = styled(NavLink)`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,31 +66,27 @@ const MainLink = styled(NavLink)`
             color: white;
         }
     }
+
+    ${props => props.$twitch && css`
+        &:nth-child(1) {
+            ${mixins.twitchDown('1s', '15px')}
+        }
+
+        &:nth-child(2) {
+            min-width: 225px;
+            ${mixins.twitchDown('1.05s', '15px')}
+        }
+
+        &:nth-child(3) {
+            min-width: 200px;
+            ${mixins.twitchDown('1.1s', '15px')}
+        }
+    `}
 `
 
-const TwitchingLink = styled(MainLink)`
-    &:nth-child(1) {
-        ${mixins.twitchDown('1s', '15px')}
-    }
-
-    &:nth-child(2) {
-        min-width: 225px;
-        ${mixins.twitchDown('1.05s', '15px')}
-    }
-
-    &:nth-child(3) {
-        min-width: 200px;
-        ${mixins.twitchDown('1.1s', '15px')}
-    }
-`
-
-export default function NavButton({to, text, animate = true}) {
-    console.log("btn nav", animate)
-
-    const Link = animate ? TwitchingLink : MainLink;
-
+export default function NavButton({to, text, idleAnimation}) {
     return (
-        <Link to={to} activeClassName="selected">
+        <Link to={to} activeClassName="selected" $twitch={idleAnimation}>
             <div className="btn-bg"></div>
             <div className="btn-text">{text}</div>
         </Link>
