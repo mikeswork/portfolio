@@ -4,9 +4,9 @@ import * as mixins from "./mixins";
 import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
 import topPng from "../img/mountains-abstract-top-bg.png";
 
-const Sect = function VideoSection({className, ...props}) {
+const Sect = function(props) {
     return (
-        <div className={className} id={props.id}>
+        <div className={props.className} id={props.id}>
             <h2>{props.title}</h2>
 
             <div className="content">
@@ -32,11 +32,6 @@ const Section = styled(Sect)`
         text-align: center;
         font-size: 2.5em;
         ${mixins.letterSpace()}
-    }
-
-    .content {
-        text-align: center;
-        padding: 1vh 1vw;
     }
 `
 
