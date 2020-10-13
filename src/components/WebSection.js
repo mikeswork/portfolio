@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import * as mixins from "./mixins";
+import { snapPts } from "./mixins";
 import Section from "./Section";
 import Thumbnail from "./Thumbnail";
 
@@ -12,12 +12,6 @@ import outlanderThumb from "../img/outlander-sage-thumb.jpg";
 import outlanderImg from "../img/outlander-sage.jpg";
 import hallmarkThumb from "../img/hallmark-thumb.jpg";
 import hallmarkImg from "../img/hallmark.jpg";
-
-const snapPts = {
-    minMed: 'min-width: 930px',
-    maxMed: 'max-width: 930px',
-    maxBig: 'max-width: 1700px'
-}
 
 const odd = (props) => {
     return (
