@@ -1,16 +1,14 @@
 import { keyframes, css } from 'styled-components';
 
 export function abs(center = false) {
-    return `
+    return css`
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
 
-        ${ center &&
-            `margin: auto`
-        }
+        ${center && `margin: auto;`}
     `
 }
 

@@ -20,23 +20,23 @@ const Container = styled.div`
 export default function Nav({ mode = headerMode.default, pages, currPage }) {
 	var uniqueId = 0;
 
-	const [animateBtns, setAnimateBtns] = useState(mode === headerMode.full);
+	const [suppressAnim, setSuppressAnim] = useState(false);
 
-	const isInteracting = (mouseOver) => {
-		if (mode === headerMode.full) {
-			if (mouseOver && animateBtns) {
-				setAnimateBtns(false);
-			} else if (!mouseOver && !animateBtns) {
-				setAnimateBtns(true);
-			}
-		}
+	const isInteracting = (e) => {
+        const event = e.nativeEvent.type;
+
+        if (event === "mouseover" && !suppressAnim) {
+            setSuppressAnim(true);
+        } else if (event === "mouseout" && suppressAnim) {
+            setSuppressAnim(false);
+        }
 	};
 
 	return (
 		<Container
             $mode={mode}
-			onMouseOver={isInteracting.bind(this, true)}
-			onMouseOut={isInteracting.bind(this, false)}
+            onMouseOver={isInteracting}
+            onMouseOut={isInteracting}
 		>
 			{pages.map((page) => {
 				return (
@@ -44,8 +44,9 @@ export default function Nav({ mode = headerMode.default, pages, currPage }) {
 						key={uniqueId++}
 						text={page.title}
 						to={page.to}
-						currPage={currPage}
-						idleAnimation={animateBtns}
+                        currPage={currPage}
+                        mode={mode}
+						suppressAnim={suppressAnim}
 					/>
 				);
 			})}

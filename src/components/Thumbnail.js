@@ -21,6 +21,7 @@ const Thumbnail = styled(thumb)`
     padding: 2px;
     background-color: #d1d4d8;
     clip-path: ${clipPath};
+    cursor: pointer;
     
     img {
         display: block;

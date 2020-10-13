@@ -2,6 +2,7 @@ import React from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import styled, { css } from 'styled-components';
 import * as mixins from './mixins'
+import { headerMode } from "./Header";
 
 const transDur = `0.1s`;
 
@@ -10,28 +11,44 @@ const Link = styled(NavLink)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 250px;
-    margin: 5px 0;
+    
+    width: 250px;
+    min-width: 100px;
+
+    ${props => props.$mode === headerMode.full && `
+        width: unset;
+        min-width: 250px;
+        
+        &:nth-child(2) {
+            min-width: 225px;
+        }
+
+        &:nth-child(3) {
+            min-width: 200px;
+        }
+    `}
+
+    margin: 2px 1px 0;
+    ${props => props.$mode === headerMode.full && `margin: 5px 0;`}
+    
     ${mixins.dropShadow()}
     transition: all ${transDur};
 
-    &:nth-child(2) {
-        min-width: 225px;
-    }
-
-    &:nth-child(3) {
-        min-width: 200px;
-    }
-
     .btn-bg {
-        content: '';
+        background-color: #ccc;
         ${mixins.abs()}
+        
+        transform: skew(10deg);
 
-        background-color: transparent;
-        border-top: 30px solid #ffffffcc;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-        height: 0;
+        ${props => props.$mode === headerMode.full && `
+            height: 0;
+            transform: none;
+            background-color: transparent;
+            border-top: 30px solid #ffffffcc;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        `}
+        
         z-index: -1;
 
         transition: all ${transDur};
@@ -47,20 +64,31 @@ const Link = styled(NavLink)`
 
     &:hover {
         .btn-bg {
-            border-top-color: #364f65;
-            transform: scaleX(1.25);
+            background-color: #364f65;
+            
+            ${props => props.$mode === headerMode.full && `
+                transform: scaleX(1.25);
+                background-color: transparent;
+                border-top-color: #364f65;
+            `};
         }
         .btn-text {
             color: white;
         }
     }
     &:active {
-        transform: scale(0.9);
+        transform: translateY(7px);
+        ${props => props.$mode === headerMode.full && `transform: scale(0.9);`}
     }
 
     &.selected {
         .btn-bg {
-            border-top-color: #364f65;
+            background-color: #364f65;
+
+            ${props => props.$mode === headerMode.full && `
+                background-color: transparent;
+                border-top-color: #364f65;
+            `}
         }
         .btn-text {
             color: white;
@@ -84,9 +112,10 @@ const Link = styled(NavLink)`
     `}
 `
 
-export default function NavButton({to, text, idleAnimation}) {
+export default function NavButton({to, text, mode, suppressAnim}) {
+    
     return (
-        <Link to={to} activeClassName="selected" $twitch={idleAnimation}>
+        <Link to={to} activeClassName="selected" $mode={mode} $twitch={mode === headerMode.full && !suppressAnim}>
             <div className="btn-bg"></div>
             <div className="btn-text">{text}</div>
         </Link>
