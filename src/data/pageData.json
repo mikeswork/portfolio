@@ -1,30 +1,118 @@
 {
-    "pages": [
-        {
-            "title": "Web Dev",
-            "to": "/webdev/#webdev",
-            "htmlContent": [
+    "title": "Michael Richardson - React Dev",
+    "pages": {
+        "web": {
+            "title": "Web",
+            "url": "/webdev/#web",
+            "content": [
                 {
-                    "title": "Section 1",
-                    "img": "",
-                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit lacus, tincidunt in urna quis, facilisis vestibulum leo. Mauris sed porta elit, sit amet suscipit nunc. Morbi ullamcorper libero ac lacus vestibulum, id viverra justo posuere. Ut vehicula vel libero pulvinar congue. Integer quis dui vitae turpis faucibus mattis in vel eros. Donec augue ipsum, tristique sit amet aliquam quis, accumsan a arcu. Sed eget consequat purus, non imperdiet lectus. Quisque laoreet elit vitae facilisis suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut fringilla at enim a feugiat. Proin et ultricies nibh, sit amet tristique justo. Etiam ultrices tincidunt fermentum."
+                    "thumbSrc": "./awards-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./awards.jpg",
+                        "text": {
+                            "header": "Awards 2020",
+                            "paragraphs": [
+                                "I worked on the UI and functionality of a module called Ballot Picker. The outdated state of this component required me to completely refactor it--the client wanted new game mechanics and a recent upgrade to our framework caused it to not run at all.",
+                                "The Ballot Picker is a complex experience that pulls in movie and award data from a JSON file, allows the user to select their choice for each category, and stores these choices in an AWS DynamoDB database. After the award show has finished airing, the module automatically unlocks all the categories so that users can browse through them, see the choice they made for each, and compare the actual award winner with the option they selected. For any of their choices that match the winners, users are rewarded a certain amount of points. In the final screen, users can see their overall score and all the category winners."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub", 
+                                "url": "https://github.com/mikeswork/games/tree/master/awards"
+                            }
+                        }
+                    }
                 },
                 {
-                    "title": "Section 2",
-                    "img": "",
-                    "text": "Aliquam eget aliquam purus, a luctus augue. Mauris sed massa mauris. Nulla vel luctus magna. Integer eleifend sem vitae ipsum sagittis, in congue justo venenatis. Proin nulla urna, porttitor vitae rhoncus et, tristique tincidunt lorem. Vivamus euismod eros vitae rutrum semper. Cras sit amet mi sed magna aliquam elementum. Donec fermentum efficitur odio eget tempus. Donec a tristique metus. Aenean sit amet nibh tincidunt, pretium nunc nec, tempus dui. In a ex elementum, eleifend sem eget, faucibus ipsum. Proin eu magna gravida, faucibus ex et, venenatis libero. In ac orci magna."
+                    "thumbSrc": "./hbo-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./hbo.jpg",
+                        "text": {
+                            "header": "HBO", 
+                            "paragraphs": [
+                                "I built the complex layout and visuals of this site using the Advent component that I created on another project. The flexibility of the module allows us to apply a completely different style each time that we use it without needing to enhance or refactor the original component.", 
+                                "Visually, this site pushed the boundaries of what we had done before. It needed to run on limited hardware, so I employed a combination of compressed images, video, and even animated gifs."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub", 
+                                "url": "https://github.com/mikeswork/games/tree/master/hbo"
+                            }
+                        }
+                    }
+                },
+                {
+                    "thumbSrc": "./hallmark-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./hallmark.jpg",
+                        "text": {
+                            "header": "Hallmark",
+                            "paragraphs": [
+                               "For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes interactable. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. When a user clicks on a node, it launches a separate game engine based on the game type set in the Google sheet."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub", 
+                                "url": "https://github.com/mikeswork/games/tree/master/hallmark"
+                            }
+                        }
+                    }
+                },
+                {
+                    "thumbSrc": "./hub-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./hub.jpg",
+                        "text": {
+                            "header": "Hub",
+                            "paragraphs": [
+                                "This was an ambitious project to create an experience that users would want to play in and return to. We achieved the goal by developing a customizable site that an administrator could keep fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and featuring different games. Each user automatically gets a basic, default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. Once they decide to register their account, they can receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various, fun items (some animated via gifs or a sprite player). ","For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes interactable. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. When a user clicks on a node, it launches a separate game engine based on the game type set in the Google sheet.",
+                                "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So, I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
+                                "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (e.g. css animation vs. video)."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub", 
+                                "url": "https://github.com/mikeswork/games/tree/master/hub"
+                            }
+                        }
+                    }
+                },
+                {
+                    "thumbSrc": "./outlander-sage-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./outlander-sage.jpg"
+                    }
+                },
+                {
+                    "thumbSrc": "./shark-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./shark.jpg"
+                    }
+                },
+                {
+                    "thumbSrc": "./name-movie-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./name-movie.jpg",
+                        "text": {
+                            "header": "Name the Movie",
+                            "paragraphs": [
+                                "An Alexa movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental purchasing API that Amazon had not officially released at the time of development.",
+                                "This is primarily a voice-only game, but I did create a basic UI that displays the question, answer, and user score. These UI templates are in the /apl/ folder."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub",
+                                "url": "https://github.com/mikeswork/games/tree/master/alexa"
+                            }
+                        }
+                    }
                 }
             ]
         },
-        {
+        "resume": {
             "title": "Resume",
-            "to": "/resume/#resume",
+            "url": "/resume/#resume",
             "htmlContent": []
         },
-        {
+        "video": {
             "title": "Video",
-            "to": "/video/#video",
+            "url": "/video/#video",
             "htmlContent": []
         }
-    ]
+    }
 }

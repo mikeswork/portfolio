@@ -14,8 +14,10 @@ const Link = styled(NavLink)`
     
     width: 250px;
     min-width: 100px;
-
     margin: 2px 1px 0;
+
+    text-decoration: none;
+    font-size: 1.25em;
     
     ${mixins.dropShadow()}
     transition: all ${transDur};

@@ -13,6 +13,11 @@ export const headerMode = {
 	stickBottom: "stickBottom",
 };
 
+const Link = styled(NavLink)`
+    text-decoration: none;
+    font-size: 1.25em;
+`
+
 const Container = styled.div`
 	z-index: 1;
 	display: flex;
@@ -80,18 +85,18 @@ const Container = styled.div`
 export default function Header({ mode = headerMode.default, visible = true, id, to }) {
 	// The <h1> at the top will be a clickable NavLink if property "to" is set
 	const headerEl = to ? (
-		<NavLink to={to}>
-			<h1>Michael Richardson - Portfolio</h1>
-		</NavLink>
+		<Link to={to}>
+			<h1>{pageData.title}</h1>
+		</Link>
 	) : (
-		<h1>Michael Richardson - Portfolio</h1>
+		<h1>{pageData.title}</h1>
 	);
 
 	return (
 		<Container id={id} visible={visible} $mode={mode}>
 			{headerEl}
 
-			<Nav pages={pageData.pages} mode={mode} />
+			<Nav pages={[pageData.pages.web, pageData.pages.resume, pageData.pages.video]} mode={mode} />
 		</Container>
 	);
 }

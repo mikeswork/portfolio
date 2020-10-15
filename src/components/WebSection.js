@@ -3,17 +3,11 @@ import styled from "styled-components";
 import { snapPts } from "./mixins";
 import Section from "./Section";
 import Thumbnail from "./Thumbnail";
+import pageData from "../data/pageData.json";
 
-import sharkThumb from "../img/shark-thumb.jpg";
-import sharkImg from "../img/shark.jpg";
-import hboThumb from "../img/hbo-thumb.jpg";
-import hboImg from "../img/hbo.jpg";
-import outlanderThumb from "../img/outlander-sage-thumb.jpg";
-import outlanderImg from "../img/outlander-sage.jpg";
-import hallmarkThumb from "../img/hallmark-thumb.jpg";
-import hallmarkImg from "../img/hallmark.jpg";
+const images = require.context('../img');
 
-const odd = (props) => {
+const tGroup = (props) => {
     return (
         <div className={props.className}>
             {props.children}
@@ -21,31 +15,51 @@ const odd = (props) => {
     )
 }
 
-const Odd = styled(odd)`
+const ThumbGroup = styled(tGroup)`
     display: flex;
 
     @media (${snapPts.maxMed}) {
         flex-direction: column;
     }
-`
 
-const Even = styled(Odd)`
-    @media (${snapPts.maxBig}) and (${snapPts.minMed}) {
-        margin-left: 97px;
-    }
+    /* &:nth-child(even) { 
+        @media (${snapPts.maxBig}) and (${snapPts.minMed}) {
+            margin-left: 97px;
+        }
+    } */
 `
 
 const webContent = (props) => {
+    const examples = pageData.pages.web.content;
+    let groups = [];
+    const perGroup = 2;
+    
+    for (let i = 0; i < examples.length; i+=perGroup) {
+        let grp = [];
+        for (let j = 0; j < perGroup; j++) {
+            const example = examples[i+j]
+
+            if (example !== undefined) grp.push(examples[i+j])
+        }
+        groups.push(grp)
+    }
+
+    let groupId = 0;
+    let thumbId = 0;
+
     return (
         <div className={props.className}>
-            <Odd>
-                <Thumbnail tSrc={sharkThumb} fSrc={sharkImg} />
-                <Thumbnail tSrc={hboThumb} fSrc={hboImg} />
-            </Odd>
-            <Even>
-                <Thumbnail tSrc={outlanderThumb} fSrc={outlanderImg} />
-                <Thumbnail tSrc={hallmarkThumb} fSrc={hallmarkImg} />
-            </Even>
+            {
+                groups.map(group => (
+                    <ThumbGroup key={groupId++}>
+                        {
+                            group.map(thumbData => (
+                                <Thumbnail key={thumbId++} tSrc={images(thumbData.thumbSrc)} info={thumbData.info} />
+                            ))
+                        }
+                    </ThumbGroup>
+                ))
+            }
         </div>
     )
 }
@@ -53,6 +67,7 @@ const webContent = (props) => {
 const WebContent = styled(webContent)`
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 1vh 1vw;
 
     @media (${snapPts.maxBig}) {
@@ -62,8 +77,11 @@ const WebContent = styled(webContent)`
 `
 
 const WebSection = (props) => {
+    const splitUrl = pageData.pages.web.url.split("#");
+    const sectId = splitUrl[splitUrl.length-1];
+
     return (
-        <Section id="webdev" title="Web Dev" className={props.className}>
+        <Section id={sectId} title="Web Dev" className={props.className}>
             <WebContent />
         </Section>
     )

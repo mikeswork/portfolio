@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Header, { headerMode } from "./components/Header";
 import Section from "./components/Section";
-import WebSection from "./components/WebSection";
-
+import LoadingIndicator from "./components/LoadingIndicator";
 import "./App.css";
+
+const WebSection = React.lazy(() => import("./components/WebSection"));
 
 export default function App() {
     const [showSecondHead, setShowSecondHead] = useState(false);
@@ -36,7 +37,10 @@ export default function App() {
                 <div id="observer-anchor" />
 				<Header mode={headerMode.stickTop} visible={showSecondHead} to={"/home/#home"} />
 
-                <WebSection/>
+                <Suspense fallback={<div style={{textAlign: "center"}}><LoadingIndicator /></div>}>
+                    <WebSection/>
+                </Suspense>
+                
                 <Section id="resume" title="Resume"></Section>
                 <Section id="video" title="Video"></Section>
 			</div>
