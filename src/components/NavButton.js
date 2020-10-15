@@ -49,7 +49,7 @@ const Link = styled(NavLink)`
         }
     }
     &:active {
-        transform: translateY(7px);
+        transform: translate(1px, 2px);
     }
 
     &.selected {
