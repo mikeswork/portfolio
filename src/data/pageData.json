@@ -3,8 +3,14 @@
     "pages": {
         "web": {
             "title": "Web",
-            "url": "/webdev/#web",
+            "path": "/webdev/#web",
             "content": [
+                {
+                    "thumbSrc": "./gamescom-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./gamescom.jpg"
+                    }
+                },
                 {
                     "thumbSrc": "./awards-thumb.jpg",
                     "info": {
@@ -74,9 +80,9 @@
                     }
                 },
                 {
-                    "thumbSrc": "./outlander-sage-thumb.jpg",
+                    "thumbSrc": "./outlander-thumb.jpg",
                     "info": {
-                        "imgSrc": "./outlander-sage.jpg"
+                        "imgSrc": "./outlander.jpg"
                     }
                 },
                 {
@@ -93,7 +99,7 @@
                             "header": "Name the Movie",
                             "paragraphs": [
                                 "An Alexa movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental purchasing API that Amazon had not officially released at the time of development.",
-                                "This is primarily a voice-only game, but I did create a basic UI that displays the question, answer, and user score. These UI templates are in the /apl/ folder."
+                                "This is primarily a voice-only game, but I did create a basic UI that displays the question, answer, and user score. These UI templates are in the /apl/ folder at the GitHub link below."
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub",
@@ -106,12 +112,12 @@
         },
         "resume": {
             "title": "Resume",
-            "url": "/resume/#resume",
+            "path": "/resume/#resume",
             "htmlContent": []
         },
         "video": {
             "title": "Video",
-            "url": "/video/#video",
+            "path": "/video/#video",
             "htmlContent": []
         }
     }

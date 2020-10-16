@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { snapPts } from "./mixins";
+import { snapPts } from "../util/mixins";
 import Section from "./Section";
 import Thumbnail from "./Thumbnail";
 import pageData from "../data/pageData.json";
@@ -77,11 +77,8 @@ const WebContent = styled(webContent)`
 `
 
 const WebSection = (props) => {
-    const splitUrl = pageData.pages.web.url.split("#");
-    const sectId = splitUrl[splitUrl.length-1];
-
     return (
-        <Section id={sectId} title="Web Dev" className={props.className}>
+        <Section path={pageData.pages.web.path} title="Web Dev" className={props.className}>
             <WebContent />
         </Section>
     )

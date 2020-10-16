@@ -43,7 +43,7 @@ export default function Nav({ mode = headerMode.default, pages, currPage }) {
 					<NavButton
 						key={uniqueId++}
 						text={page.title}
-						to={page.url}
+						to={page.path}
                         currPage={currPage}
                         mode={mode}
 						suppressAnim={suppressAnim}

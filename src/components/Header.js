@@ -3,7 +3,7 @@ import { NavHashLink as NavLink } from "react-router-hash-link";
 import Nav from "./Nav";
 import pageData from "../data/pageData.json";
 import styled from "styled-components";
-import * as mixins from "./mixins";
+import * as mixins from "../util/mixins";
 import mountainBg from "../img/mountains-bg.jpg";
 
 export const headerMode = {
@@ -86,10 +86,10 @@ export default function Header({ mode = headerMode.default, visible = true, id, 
 	// The <h1> at the top will be a clickable NavLink if property "to" is set
 	const headerEl = to ? (
 		<Link to={to}>
-			<h1>{pageData.title}</h1>
+			<h1 id="main-header">{pageData.title}</h1>
 		</Link>
 	) : (
-		<h1>{pageData.title}</h1>
+		<h1 id="main-header">{pageData.title}</h1>
 	);
 
 	return (
