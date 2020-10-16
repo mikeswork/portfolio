@@ -6,6 +6,12 @@
             "path": "/webdev/#web",
             "content": [
                 {
+                    "thumbSrc": "./self-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./self.gif"
+                    }
+                },
+                {
                     "thumbSrc": "./gamescom-thumb.jpg",
                     "info": {
                         "imgSrc": "./gamescom.jpg"
