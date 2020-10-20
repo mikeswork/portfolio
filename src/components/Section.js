@@ -40,7 +40,11 @@ const Section = styled(Sect)`
 		text-align: center;
 		font-size: 2.5em;
 		${mixins.letterSpace()}
-	}
+    }
+    
+    .content {
+        padding: 1vh 1vw;
+    }
 `;
 
 export default Section;

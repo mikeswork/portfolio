@@ -10,7 +10,7 @@ const ResumeContent = (props) => {
 
 const ResumeSection = (props) => {
     return (
-        <Section path={pageData.pages.resume.path} title="Resume" className={props.className}>
+        <Section path={pageData.pages.resume.path} title={pageData.pages.resume.title} className={props.className}>
             <ResumeContent/>
         </Section>
     )

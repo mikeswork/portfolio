@@ -68,7 +68,6 @@ const WebContent = styled(webContent)`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1vh 1vw;
 
     @media (${snapPts.maxBig}) {
         flex-direction: column;
@@ -78,7 +77,7 @@ const WebContent = styled(webContent)`
 
 const WebSection = (props) => {
     return (
-        <Section path={pageData.pages.web.path} title="Web Dev" className={props.className}>
+        <Section path={pageData.pages.web.path} title={pageData.pages.web.title} className={props.className}>
             <WebContent />
         </Section>
     )

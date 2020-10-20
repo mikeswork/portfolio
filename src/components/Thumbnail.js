@@ -12,7 +12,7 @@ const thumb = (props) => {
 
 		if (text.header) {
 			let head = document.createElement("h2");
-			head.style.cssText = "text-align: center;";
+			head.style.cssText = "text-align: center; text-transform: uppercase";
 			head.textContent = text.header;
 			txtDiv.appendChild(head);
 		}
