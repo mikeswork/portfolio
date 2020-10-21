@@ -14,9 +14,9 @@ export const headerMode = {
 };
 
 const Link = styled(NavLink)`
-    text-decoration: none;
-    font-size: 1.25em;
-`
+	text-decoration: none;
+	font-size: 1.25em;
+`;
 
 const Container = styled.div`
 	z-index: 1;
@@ -24,7 +24,7 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: flex-start;
 	height: 100vh;
-	transition: opacity 0.25s;
+	transition: opacity 0.25s, transform 0.25s;
 
 	h1 {
 		margin: 10vh 0 0;
@@ -39,12 +39,6 @@ const Container = styled.div`
 		background-color: #4b5e7a;
 		mix-blend-mode: multiply;
 	}
-
-	${(props) =>
-		props.visible === false &&
-		`
-        opacity: 0;
-    `}
 
 	${(props) =>
 		props.$mode === headerMode.stickTop &&
@@ -67,7 +61,7 @@ const Container = styled.div`
         }
     `}
 
-    ${(props) =>
+	${(props) =>
 		props.$mode === headerMode.stickBottom &&
 		`
         justify-content: flex-end;
@@ -79,6 +73,13 @@ const Container = styled.div`
             margin: unset;
             font-size: 2em;
         }
+    `}
+
+    ${(props) =>
+		props.visible === false &&
+		`
+        opacity: 0;
+        transform: translateY(-100%);
     `}
 `;
 

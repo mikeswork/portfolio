@@ -7,15 +7,7 @@ import pageData from "../data/pageData.json";
 
 const images = require.context('../img');
 
-const tGroup = (props) => {
-    return (
-        <div className={props.className}>
-            {props.children}
-        </div>
-    )
-}
-
-const ThumbGroup = styled(tGroup)`
+const ThumbGroup = styled.div`
     display: flex;
 
     @media (${snapPts.maxMed}) {

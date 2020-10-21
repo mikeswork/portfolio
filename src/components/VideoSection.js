@@ -21,6 +21,7 @@ const VideoContent = props => {
 		<VidWrapper>
 			<Vid>
 				<iframe
+                    title="Palouse Heritage"
 					src="https://player.vimeo.com/video/302378063"
 					width="560"
 					height="315"
@@ -32,6 +33,7 @@ const VideoContent = props => {
 
 			<Vid>
 				<iframe
+                    title="Silent Movie"
 					width="560"
 					height="315"
 					src="https://www.youtube.com/embed/BuudPA9UPsg"
@@ -43,6 +45,7 @@ const VideoContent = props => {
 
 			<Vid>
 				<iframe
+                    title="Winston"
 					width="560"
 					height="315"
 					src="https://www.youtube.com/embed/0iA0aykvtgo"
