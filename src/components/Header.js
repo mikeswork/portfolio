@@ -36,8 +36,15 @@ const Container = styled.div`
 		font-size: 3.8em;
 		letter-spacing: 0.05em;
 		font-weight: normal;
-		background-color: #4b5e7a;
-		mix-blend-mode: multiply;
+		background-color: #38465c;
+        mix-blend-mode: multiply;
+        
+        @media (${mixins.snapPts.maxLarge}) {
+            background-color: #19202d;
+            mix-blend-mode: normal;
+            opacity: 0.9;
+            font-size: 3.4em;
+        }
 	}
 
 	${(props) =>
