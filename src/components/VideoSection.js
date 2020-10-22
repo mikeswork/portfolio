@@ -8,59 +8,44 @@ const VidWrapper = styled.div`
 `;
 
 const Vid = styled.div`
-    margin: 40px;
-    
-    iframe {
-        width: 80vw;
-        max-width: 560px;
-    }
+	margin: 0 0 40px;
+
+	iframe {
+		width: 80vw;
+		max-width: 560px;
+	}
 `;
 
-const VideoContent = props => {
+const VideoContent = (props) => {
+	const videos = pageData.pages.video.content || [];
+	let vidId = 0;
+
 	return (
 		<VidWrapper>
-			<Vid>
-				<iframe
-                    title="Palouse Heritage"
-					src="https://player.vimeo.com/video/302378063"
-					width="560"
-					height="315"
-					frameBorder="0"
-					allow="autoplay; fullscreen"
-					allowFullScreen
-				></iframe>
-			</Vid>
-
-			<Vid>
-				<iframe
-                    title="Silent Movie"
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/BuudPA9UPsg"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				></iframe>
-			</Vid>
-
-			<Vid>
-				<iframe
-                    title="Winston"
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/0iA0aykvtgo"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				></iframe>
-			</Vid>
+			{videos.map((vidData) => (
+				<Vid key={vidId++}>
+					<iframe
+						title={vidData.title}
+						src={vidData.src}
+						width="560"
+						height="315"
+						frameBorder="0"
+						allow={
+							vidData.src.indexOf("youtube") === -1
+								? "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								: "autoplay; fullscreen"
+						}
+						allowFullScreen
+					></iframe>
+				</Vid>
+			))}
 		</VidWrapper>
 	);
 };
 
 const VideoSection = (props) => {
 	return (
-		<Section path={pageData.pages.video.path} title="Video (just for fun)" className={props.className}>
+		<Section path={pageData.pages.video.path} title="Video (just for fun)">
 			<VideoContent />
 		</Section>
 	);

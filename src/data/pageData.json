@@ -13,7 +13,7 @@
                             "header": "This Portfolio",
                             "paragraphs": [
                                 "The site you are looking at--built in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
-                                "The challenge was creating a page that displays a floating header, which is initially hidden, and then shows up to indicate the current section as the user scrolls/clicks to scroll through them. It was interesting to use the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly. Extracting this logic out into util/useScrolledTo.js and importing it into the components that require it felt like an elegant approach."
+                                "The challenge was creating a page that displays a floating header, which is initially hidden, and then shows up to indicate the current section as the user scrolls/clicks to scroll through them. It was interesting to use the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly. Extracting this logic out into util/useScrolledTo.js, and importing it as a state hook into the components that should respond to scrolling, felt like an elegant approach."
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub",
@@ -130,12 +130,132 @@
         "resume": {
             "title": "Resume",
             "path": "/resume/#resume",
-            "htmlContent": []
+            "content": {
+                "skills": [
+                    "HTML, CSS, JavaScript",
+                    "TypeScript",
+                    "React (JS and Native)",
+                    "jQuery",
+                    "Backbone",
+                    "Git",
+                    "REST",
+                    "Amazon Web Services",
+                    "SQL",
+                    "UI/UX design",
+                    "C# and .NET",
+                    "UWP and WPF",
+                    "PHP",
+                    "CPP experience",
+                    "Writing",
+                    "Photoshop",
+                    "Illustrator",
+                    "After Effects (and JSX)",
+                    "Video editing / publishing",
+                    "Project management",
+                    "Unity"
+                ],
+                "experience": [
+                    {
+                        "title": "Web/UI Developer",
+                        "years": "9/2018 - 4/2020",
+                        "company": "Exponential Entertainment Inc.",
+                        "responsibilities": [
+                            "Built proof-of concept React site that hosted and integrated with Unity games. Challenges were learning how to create games in Unity, scaling content across devices, share user game preferences between multiple devices, and simulate a different virtual gamepad control for each unique game on mobile.",
+                            "Used Amazon Web Services to enhance HTML 5 games (S3, DynamoDB, Lambda, and CDN).",
+                            "Looked for opportunities to add value to the team by contributing my design and motion design experience. Using Photoshop and After Effects, I assisted designers by generating comps and visual content.",
+                            "Created complicated, scalable web apps with images, sounds, videos, and advanced user interactions.",
+                            "Designed and developed Alexa web app (architected, developed, UI, data, testing, etc.)",
+                            "Worked in MVC architecture, using HTML, CSS, React, JavaScript, jQuery, and Backbone."
+                        ]
+                    },
+                    {
+                        "title": "Design Developer",
+                        "years": "1/2012 - 2/2018",
+                        "company": "Microsoft",
+                        "responsibilities": [
+                            "Had ownership of the fit and finish (visuals, UI, accessibility, etc.) of the Windows 10 Photos app (XAML/C# UWP). My role was to discover and fix deviations from the design comps and help developers adhere to standards and requirements. I frequently met and worked with designers, project managers, and developers to ensure that the end-product met both visual and technical requirements. It was also my responsibility to assess new work items and assign them to other engineers.",
+                            "Assisted designers by creating complex prototypes in order to test out concepts and ideas, using the best tool for each case: XAML/C#, HTML/JavaScript, etc.",
+                            "Demonstrated having a good eye for matching product UI to comps, motion studies, etc.",
+                            "Created complicated, scalable UI, adding motion and effects for user interactions (XAML and HTML).",
+                            "Investigated and implemented new .NET API’s to keep our product aligned to evolving platform and design standards.",
+                            "Instructed developers on how to follow proper UI coding procedures.",
+                            "Worked in a complex development environment that required precise steps and methods to operate in.",
+                            "Trained new team members and helped them throughout the entire release cycle."
+                        ]
+                    },
+                    {
+                        "title": "Web Designer and Developer",
+                        "years": "7/2008 - 12/2011",
+                        "company": "Sole proprietor",
+                        "responsibilities": [
+                            "Designed website concepts for clients (in Photoshop and Illustrator).",
+                            "Implemented rich, interactive web content using HTML, CSS, JavaScript, Ajax, jQuery, PHP, ActionScript, and ASP.NET (C#).",
+                            "Coded HTML emails.",
+                            "Created a Content Management System that allowed users to easily make regular updates to their site.",
+                            "Outsourced projects and managed development teams."
+                        ]
+                    },
+                    {
+                        "title": "Multiple Advertising Agencies",
+                        "years": "2008 - 2011",
+                        "company": "",
+                        "responsibilities": [
+                            "Web development for Lionfish, Evolve itv, Razorfish, RocketDog Communications, DNA, and Perfect Pixels Media Group.",
+                            "Worked in fast-paced environments with many simultaneous projects and quick deadlines.",
+                            "Familiar with quick turnaround and working in a team to deliver product to client on time."
+                        ]
+                    },
+                    {
+                        "title": "E-Learning Developer",
+                        "years": "8/2009 - 6/2010",
+                        "company": "Intrepid Learning Solutions",
+                        "responsibilities": [
+                            "Created interactive modules that were used in many e-learning sites.",
+                            "Worked with project management to troubleshoot online training sites and fix bugs.",
+                            "Created graphics and designs in Photoshop.",
+                            "Edited video in After Effects and imported into e-learning modules."
+                        ]
+                    },
+                    {
+                        "title": "Web Designer",
+                        "years": "1/2009 - 4/2009",
+                        "company": "Contract at Microsoft Research",
+                        "responsibilities": [
+                            "Created and designed website concepts in Photoshop and Illustrator.",
+                            "Implemented and debugged experimental search engine that used feed of real Bing search results.",
+                            "Created documents and graphics for print using InDesign."
+                        ]
+                    },
+                    {
+                        "title": "Web Developer",
+                        "years": "9/2007 - 9/2008",
+                        "company": "Contract at Microsoft Bing",
+                        "responsibilities": [
+                            "Developed site prototypes using different web technologies (HTML, CSS, XML, JavaScript, Ajax, and jQuery).",
+                            "Used Flash and ActionScript to prototype various web user interfaces.",
+                            "Created and designed visual effects for web UI."                            
+                        ]
+                    }
+                ]
+            }
         },
         "video": {
             "title": "Video",
             "path": "/video/#video",
-            "htmlContent": []
+            "content": [
+                {
+                    "title": "Palouse Heritage",
+                    "src": "https://player.vimeo.com/video/302378063"
+                },
+                {
+                    "title": "Silent Movie",
+                    "src": "https://www.youtube.com/embed/BuudPA9UPsg"
+                },
+                {
+                    "title": "Winston",
+                    "src": "https://www.youtube.com/embed/0iA0aykvtgo"
+                }
+            ]
         }
     }
 }

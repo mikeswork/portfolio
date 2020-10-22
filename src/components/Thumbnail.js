@@ -99,7 +99,7 @@ const thumb = (props) => {
 const clipPath = `polygon(0 0, calc(100% - 40px) 0, 100% 100%, 40px 100%)`;
 
 const Thumbnail = styled(thumb)`
-	margin: 40px 0 0;
+	margin: 0 0 40px;
 	padding: 2px;
 	background-color: #d1d4d8;
 	clip-path: ${clipPath};

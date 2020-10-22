@@ -43,7 +43,7 @@ const Section = styled(Sect)`
     }
     
     .content {
-        padding: 1vh 1vw;
+        padding: 40px 3vw 75px;
     }
 `;
 

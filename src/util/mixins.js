@@ -44,7 +44,7 @@ export function letterSpace() {
 }
 
 export const snapPts = {
+    maxSmall: 'max-width: 700px',
     minMed: 'min-width: 930px',
-    maxMed: 'max-width: 930px',
-    maxBig: 'max-width: 1700px'
+    maxLarge: 'max-width: 1400px'
 }
