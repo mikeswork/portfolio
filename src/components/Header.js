@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import pageData from "../data/pageData.json";
 import styled from "styled-components";
 import * as mixins from "../util/mixins";
+import Email from "./Email";
 import mountainBg from "../img/mountains-bg.jpg";
 
 export const headerMode = {
@@ -22,12 +23,12 @@ const Container = styled.div`
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: space-around;
 	height: 100vh;
 	transition: opacity 0.25s, transform 0.25s;
 
 	h1 {
-		margin: 10vh 0 0;
+		margin: 0;
 		padding: 0 3vw;
 		${mixins.dropShadow()}
 		text-align: center;
@@ -56,6 +57,7 @@ const Container = styled.div`
 
         h1 {
             margin: unset;
+            opacity: 1;
             padding: 1vh 0 0;
             font-size: 2em;
             background-image: url(${mountainBg});
@@ -103,6 +105,8 @@ export default function Header({ mode = headerMode.default, visible = true, id, 
 	return (
 		<Container id={id} visible={visible} $mode={mode}>
 			{headerEl}
+
+            <Email visible={mode === headerMode.full}/>
 
 			<Nav pages={[pageData.pages.web, pageData.pages.resume, pageData.pages.video]} mode={mode} />
 		</Container>

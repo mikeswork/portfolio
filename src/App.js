@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter as Router, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
+import Email from "./components/Email";
 import useScrolledTo from "./util/useScrolledTo";
 import LoadingIndicator from "./components/LoadingIndicator";
 import mountainBg from "./img/mountains-bg.jpg";
@@ -57,6 +58,8 @@ export default function App() {
                 <Suspense fallback={<div style={{textAlign: "center"}}><LoadingIndicator /></div>}>
                     <VideoSection/>
                 </Suspense>
+
+                <Email margin="1em 0 3em"/>
 
                 {atTop && <Redirect to={"/"}/>}
 			</AppContent>

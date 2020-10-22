@@ -7,15 +7,15 @@ import * as mixins from "../util/mixins";
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	margin-top: 41vh;
+    align-items: center;
+    margin-bottom: 8vh;
 
 	${(props) =>
 		props.$mode === headerMode.stickTop &&
 		`
 			flex-direction: row;
 			justify-content: center;
-			margin-top: unset;
+			margin-bottom: unset;
         `}
 
 	${(props) =>
