@@ -25,7 +25,14 @@
                 {
                     "thumbSrc": "./gamescom-thumb.jpg",
                     "info": {
-                        "imgSrc": "./gamescom.jpg"
+                        "imgSrc": "./gamescom.jpg",
+                        "text": {
+                            "header": "Games.com",
+                            "paragraphs": [
+                                "A React site that loads Unity WebGL games. I needed to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
+                                "An additional layer of complexity was that the client wanted to store the settings and user's progress for each game, which would allow a seamless experience when changing devices. I met this requirement by creating a JavaScript control layer between the React site and Unity content. I used the IndexedDB browser API to capture game data, save it to an AWS database, and load it into IndexedDB on each device that the user logged in on."
+                            ]
+                        }
                     }
                 },
                 {
@@ -97,15 +104,16 @@
                     }
                 },
                 {
-                    "thumbSrc": "./outlander-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./outlander.jpg"
-                    }
-                },
-                {
                     "thumbSrc": "./shark-thumb.jpg",
                     "info": {
-                        "imgSrc": "./shark.jpg"
+                        "imgSrc": "./shark-seal.jpg",
+                        "text": {
+                            "header": "Shark Week",
+                            "paragraphs": [
+                                "Backbone.js, AWS API (RESTful), and SASS.",
+                                "I built a custom game that generates a map on which the user navigates around. Each point on the map either loads a mini-game that uses another engine, or plays a video. The user advances across the map trying to get to the finish, where they receive a custom endscreen with their score (and a video, if url is provided). The entire game is generated from JSON data, which can be customized to generate many unique games."
+                            ]
+                        }
                     }
                 },
                 {
@@ -122,6 +130,19 @@
                                 "text": "See Code on GitHub",
                                 "url": "https://github.com/mikeswork/games/tree/master/alexa"
                             }
+                        }
+                    }
+                },
+                {
+                    "thumbSrc": "./outlander-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./outlander.jpg",
+                        "text": {
+                            "header": "Outlander",
+                            "paragraphs": [
+                                "Backbone.js, AWS API (RESTful), and SASS.",
+                                "I added a sweepstakes module that allows users to register to win a prize. Once they have signed up, they can see a countdown to the end of the contest, and the results (when the admin has updated them and the current date falls after the contest conclusion). Parameters for each contest are set in DynamoDB."
+                            ]
                         }
                     }
                 }

@@ -75,10 +75,12 @@ const thumb = (props) => {
 
 		let lb = lightbox.create(mainWrapperDiv, {
 			onShow: () => {
-				document.body.style.overflow = "hidden";
+                document.body.style.overflow = "hidden";
+                document.body.style.paddingRight = "15px";
 			},
 			onClose: () => {
-				document.body.style.overflow = "auto";
+                document.body.style.overflow = "auto";
+                document.body.style.paddingRight = "0";
 			},
         });
         

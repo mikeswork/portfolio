@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import * as mixins from '../util/mixins'
 import { headerMode } from "./Header";
 
@@ -102,28 +102,12 @@ const Link = styled(NavLink)`
             }
         }
     `}
-
-    ${props => props.$twitch && css`
-        &:nth-child(1) {
-            ${mixins.twitchDown('1s', '15px')}
-        }
-
-        &:nth-child(2) {
-            min-width: 225px;
-            ${mixins.twitchDown('1.05s', '15px')}
-        }
-
-        &:nth-child(3) {
-            min-width: 200px;
-            ${mixins.twitchDown('1.1s', '15px')}
-        }
-    `}
 `
 
-export default function NavButton({to, text, mode, suppressAnim}) {
+export default function NavButton({to, text, mode}) {
     
     return (
-        <Link to={to} activeClassName="selected" $mode={mode} $twitch={mode === headerMode.full && !suppressAnim}>
+        <Link to={to} activeClassName="selected" $mode={mode}>
             <div className="btn-bg"></div>
             <div className="btn-text">{text}</div>
         </Link>
