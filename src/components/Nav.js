@@ -23,17 +23,17 @@ const Container = styled.div`
 		!props.$suppressTwitch &&
 		css`
 			a:nth-child(1) {
-				${mixins.twitchDown("1s", "15px")}
+				${mixins.twitchDown("0.5s", "15px")}
 			}
 
 			a:nth-child(2) {
 				min-width: 225px;
-				${mixins.twitchDown("1.05s", "15px")}
+				${mixins.twitchDown("0.55s", "15px")}
 			}
 
 			a:nth-child(3) {
 				min-width: 200px;
-				${mixins.twitchDown("1.1s", "15px")}
+				${mixins.twitchDown("0.6s", "15px")}
 			}
 		`}
 `;

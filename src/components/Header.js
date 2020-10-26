@@ -25,7 +25,7 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	height: 100vh;
-	transition: opacity 0.25s, transform 0.25s;
+	transition: opacity 0.25s, transform 0.1s;
 
 	h1 {
 		margin: 0;
@@ -45,6 +45,11 @@ const Container = styled.div`
             mix-blend-mode: normal;
             opacity: 0.9;
             font-size: 3.4em;
+        }
+
+        @media (${mixins.snapPts.maxSmall}) {
+            font-size: 2.5em;
+            padding: 1.5vh 3vw;
         }
 	}
 
@@ -67,6 +72,11 @@ const Container = styled.div`
             background-position-y: 45%;
             background-color: #2d394a;
             border-bottom: 5px solid #d9d9d9;
+
+            @media (${mixins.snapPts.maxSmall}) {
+                font-size: 1.5em;
+                padding: 1vh 3vw;
+            }
         }
     `}
 
@@ -88,7 +98,7 @@ const Container = styled.div`
 		props.visible === false &&
 		`
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(-30%);
     `}
 `;
 

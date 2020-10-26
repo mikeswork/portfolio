@@ -26,3 +26,7 @@ body {
 	margin: 0;
 	background-color: black;
 }
+
+.basicLightbox {
+    background: rgba(0,0,0,0.95);
+}

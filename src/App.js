@@ -24,16 +24,18 @@ const AppContent = styled.div`
 
     @media only screen and (${snapPts.maxLarge}) {
         background-size: auto;
-        background-position-x: center;
+        background-position-x: 85%;
         background-position-y: -5%;
+    }
+    @media only screen and (${snapPts.maxMed}) {
+        background-position-x: 80%;
+    }
+    @media only screen and (${snapPts.maxSmall}) {
+        background-position-x: 68%;
     }
 
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-    }
-
-    .basicLightbox {
-        background: rgba(0,0,0,0.8);
     }
 `
 
@@ -46,7 +48,6 @@ export default function App() {
 			<AppContent className="App viewing-content" id="mainApp">
 				<Header id="home" />
 				
-                <div id="observer-anchor" />
 				<Header mode={headerMode.stickTop} visible={showSecondHead} to={"/home/#home"} />
 
                 <Suspense fallback={<div style={{textAlign: "center"}}><LoadingIndicator /></div>}>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as lightbox from "basiclightbox";
+import { snapPts } from "../util/mixins";
 
 const images = require.context("../img");
 
@@ -98,10 +99,10 @@ const thumb = (props) => {
 	);
 };
 
-const clipPath = `polygon(0 0, calc(100% - 40px) 0, 100% 100%, 40px 100%)`;
+const clipPath = `polygon(0 0, calc(100% - 30px) 0, 100% 100%, 30px 100%)`;
 
 const Thumbnail = styled(thumb)`
-	margin: 0 0 40px;
+	margin: 0 0 30px;
 	padding: 2px;
 	background-color: #d1d4d8;
 	clip-path: ${clipPath};
@@ -111,6 +112,15 @@ const Thumbnail = styled(thumb)`
 		display: block;
 		clip-path: ${clipPath};
 	}
+
+    @media (${snapPts.maxSmall}) {
+        clip-path: none;
+
+        img {
+            max-width: 90vw;
+            clip-path: none;
+        }
+    }
 `;
 
 export default Thumbnail;

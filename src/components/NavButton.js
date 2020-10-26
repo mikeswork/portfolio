@@ -26,7 +26,7 @@ const Link = styled(NavLink)`
         background-color: #ccc;
         ${mixins.abs()}
         
-        @media (${mixins.snapPts.minMed}) { transform: skew(10deg); }
+        @media (${mixins.snapPts.minMed}) { transform: skew(7.7deg); }
         
         z-index: -1;
         transition: all ${transDur};

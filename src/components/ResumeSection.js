@@ -41,6 +41,9 @@ const Resume = styled.div`
 
     .chunk.skills {
         margin-bottom: 1.25em;
+        @media (${snapPts.maxSmall}) {
+            justify-items: center;
+        }
 
         ul {
             display: grid;
@@ -52,7 +55,12 @@ const Resume = styled.div`
             }
 
             li {
-                margin-right: 40px;
+                margin-right: 30px;
+
+                @media (${snapPts.maxSmall}) {
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
             }
         }
     }
