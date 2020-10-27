@@ -13,7 +13,7 @@
                             "header": "This Portfolio",
                             "paragraphs": [
                                 "The site you are looking at--built in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
-                                "The challenge was creating a page that displays a floating header, which is initially hidden, and then shows up to indicate the current section as the user scrolls/clicks to scroll through them. It was interesting to use the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly. Extracting this logic out into util/useScrolledTo.js, and importing it as a state hook into the components that should respond to scrolling, felt like an elegant approach."
+                                "It was an interesting challenge to display a floating header, which is initially hidden, and then shows up to indicate the current section as the user scrolls/clicks to scroll through them. The right strategy turned out to be using the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly. Extracting this logic out into util/useScrolledTo.js, and importing it as a state hook into the components that should respond to scrolling, felt like an elegant approach."
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub",
@@ -29,7 +29,7 @@
                         "text": {
                             "header": "Games.com",
                             "paragraphs": [
-                                "A React site that loads Unity WebGL games. I needed to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
+                                "A React site that loads Unity WebGL games. Obviously, it was vital to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
                                 "An additional layer of complexity was that the client wanted to store the settings and user's progress for each game, which would allow a seamless experience when changing devices. I met this requirement by creating a JavaScript control layer between the React site and Unity content. I used the IndexedDB browser API to capture game data, save it to an AWS database, and load it into IndexedDB on each device that the user logged in on."
                             ]
                         }
@@ -42,29 +42,12 @@
                         "text": {
                             "header": "Awards 2020",
                             "paragraphs": [
-                                "I worked on the UI and functionality of a module called Ballot Picker. The outdated state of this component required me to completely refactor it--the client wanted new game mechanics and a recent upgrade to our framework caused it to not run at all.",
-                                "The Ballot Picker is a complex experience that pulls in movie and award data from a JSON file, allows the user to select their choice for each category, and stores these choices in an AWS DynamoDB database. After the award show has finished airing, the module automatically unlocks all the categories so that users can browse through them, see the choice they made for each, and compare the actual award winner with the option they selected. For any of their choices that match the winners, users are rewarded a certain amount of points. In the final screen, users can see their overall score and all the category winners."
+                                "I worked on the UI and functionality of a tricky module called Ballot Picker. The outdated state of this component required me to completely refactor it--the client wanted new game mechanics and a recent upgrade to our framework caused it to not run at all.",
+                                "The Ballot Picker is a complex experience that pulls in movie and award data from a JSON file, allows the user to select their choice for each category, and stores these choices in a DynamoDB table. After the award show has finished airing, the module automatically unlocks all the categories so that users can browse through them, see the choice they made for each, and compare the actual award winner with the option they selected. Users are rewarded points for any of their choices that match the winners. In the final screen, they can see their overall score and the winner for each category (e.g. \"Best Picture\", \"Best Actress\", etc.)"
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub", 
                                 "url": "https://github.com/mikeswork/games/tree/master/awards"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./hbo-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./hbo.jpg",
-                        "text": {
-                            "header": "HBO", 
-                            "paragraphs": [
-                                "I built the complex layout and visuals of this site using the Advent component that I created on another project. The flexibility of the module allows us to apply a completely different style each time that we use it without needing to enhance or refactor the original component.", 
-                                "Visually, this site pushed the boundaries of what we had done before. It needed to run on limited hardware, so I employed a combination of compressed images, video, and even animated gifs."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub", 
-                                "url": "https://github.com/mikeswork/games/tree/master/hbo"
                             }
                         }
                     }
@@ -76,11 +59,29 @@
                         "text": {
                             "header": "Hallmark",
                             "paragraphs": [
-                               "For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes interactable. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. When a user clicks on a node, it launches a separate game engine based on the game type set in the Google sheet."
+                               "For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes active and the user can interact with it. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. This maximized the infinite visual permutations and interaction behaviors that we planned to have in the future.", 
+                               "When a user clicks on an advent node, it launches a separate game engine based on the game type assigned to that node in the data."
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub", 
                                 "url": "https://github.com/mikeswork/games/tree/master/hallmark"
+                            }
+                        }
+                    }
+                },
+                {
+                    "thumbSrc": "./hbo-thumb.jpg",
+                    "info": {
+                        "imgSrc": "./hbo.jpg",
+                        "text": {
+                            "header": "HBO", 
+                            "paragraphs": [
+                                "I built the complex layout and visuals of this site using the Advent component that I had created for the previous project (\"Movie Challenge\"). The flexibility of the module allows us to apply a completely different style each time that we use it without needing to enhance or refactor the original component.", 
+                                "Visually, this site pushed the boundaries of what we had done before. It needed to run on limited hardware, so I employed a combination of compressed images, video, and even animated gifs."
+                            ],
+                            "gitHub": {
+                                "text": "See Code on GitHub", 
+                                "url": "https://github.com/mikeswork/games/tree/master/hbo"
                             }
                         }
                     }
@@ -92,7 +93,7 @@
                         "text": {
                             "header": "Hub",
                             "paragraphs": [
-                                "This was an ambitious project to create an experience that users would want to play in and return to. We achieved the goal by developing a customizable site that an administrator could keep fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and featuring different games. Each user automatically gets a basic, default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. Once they decide to register their account, they can receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various, fun items (some animated via gifs or a sprite player). ","For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes interactable. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. When a user clicks on a node, it launches a separate game engine based on the game type set in the Google sheet.",
+                                "This was an ambitious project to create an experience that users loved coming back to. We achieved the goal by developing a customizable site that an administrator could keep fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, running contests, and featuring different games. Each user automatically gets a default account that keeps track of their overall points. They earn points by visiting and exploring areas of the site, playing games, and getting good scores. Once they decide to register their account, they can receive rewards as their skill level increases. Rewards allow users to customize their home screen with fun items (some animated via gifs or a sprite player). ",
                                 "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So, I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
                                 "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (e.g. css animation vs. video)."
                             ],
@@ -111,7 +112,7 @@
                             "header": "Shark Week",
                             "paragraphs": [
                                 "Backbone.js, AWS API (RESTful), and SASS.",
-                                "I built a custom game that generates a map on which the user navigates around. Each point on the map either loads a mini-game that uses another engine, or plays a video. The user advances across the map trying to get to the finish, where they receive a custom endscreen with their score (and a video, if url is provided). The entire game is generated from JSON data, which can be customized to generate many unique games."
+                                "I built a custom game that generates a map on which the user navigates around. Each point on the map either loads another engine for a mini-game, or plays a video. The user advances across the map trying to get to the finish, where they receive a custom endscreen with their score (and a payoff video, if url is provided). The entire game is generated from JSON data, which can be customized to serve up many unique games."
                             ]
                         }
                     }
@@ -123,8 +124,8 @@
                         "text": {
                             "header": "Name the Movie",
                             "paragraphs": [
-                                "An Alexa movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental purchasing API that Amazon had not officially released at the time of development.",
-                                "This is primarily a voice-only game, but I did create a basic UI that displays the question, answer, and user score. These UI templates are in the /apl/ folder at the GitHub link below."
+                                "This Alexa app is a fun movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental in-app purchasing API that Amazon had not officially released at the time of development.",
+                                "Name the Movie is primarily a voice-only game, but I did create a UI for devices with screens that displays each question, answer, and the user's score at the end. These templates, loosely based on HTML, are in the /apl/ folder at the GitHub link below."
                             ],
                             "gitHub": {
                                 "text": "See Code on GitHub",
@@ -141,7 +142,7 @@
                             "header": "Outlander",
                             "paragraphs": [
                                 "Backbone.js, AWS API (RESTful), and SASS.",
-                                "I added a sweepstakes module that allows users to register to win a prize. Once they have signed up, they can see a countdown to the end of the contest, and the results (when the admin has updated them and the current date falls after the contest conclusion). Parameters for each contest are set in DynamoDB."
+                                "I created a sweepstakes module that allows users to register to win a prize. Once they have signed up, they can see a countdown to the end of the contest, and the results (when the admin has updated them and the current date falls after the contest conclusion). Parameters for each contest are set in DynamoDB."
                             ]
                         }
                     }

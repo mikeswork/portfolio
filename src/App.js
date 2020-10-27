@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Redirect } from "react-router-dom";
+import { HashRouter as Router, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
 import Email from "./components/Email";

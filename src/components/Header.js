@@ -43,6 +43,7 @@ const Container = styled.div`
         @media (${mixins.snapPts.maxLarge}) {
             background-color: #19202d;
             mix-blend-mode: normal;
+            color: #eeeeeedd;
             opacity: 0.9;
             font-size: 3.4em;
         }

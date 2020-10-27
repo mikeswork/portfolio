@@ -6,7 +6,8 @@ import { snapPts } from "../util/mixins";
 const images = require.context("../img");
 
 const thumb = (props) => {
-	const createText = (text) => {
+
+	const createTextLayer = (text) => {
 		let txtDiv = document.createElement("div");
 		txtDiv.style.cssText =
 			"padding: 1px 25px 15px; background-color: #000102; text-align: left; color: #d8d8d8; font-family: sans-serif;";
@@ -57,22 +58,32 @@ const thumb = (props) => {
 
 	const openLightbox = info => {
 		let mainDiv = document.createElement("div");
-		mainDiv.style.cssText = "max-height: 100vh; overflow-y: auto; text-align: center;";
+        mainDiv.style.cssText = "display: flex; flex-direction: column; align-items: center; max-height: 100vh; overflow-y: auto;";
+        
+        let imgContainer = document.createElement("div");
+        imgContainer.style.cssText = "position: relative; margin: 1vmin;";
 
-		let mainImg = document.createElement("img");
+        let closeBtn = document.createElement("img");
+        closeBtn.style.cssText = "position: absolute; top: 1vmin; right: 1vmin; width: 40px; filter: drop-shadow(3px 3px 5px black)";
+        closeBtn.src = images("./close-btn.svg");
+        imgContainer.appendChild(closeBtn);
+
+        let mainImg = document.createElement("img");
+        mainImg.style.cssText = "max-width: 95vw;"
 		mainImg.src = images(info.imgSrc);
-		mainImg.style.cssText = "max-width: 95vw; margin: 1vmin;";
 
-		mainDiv.appendChild(mainImg);
+        imgContainer.appendChild(mainImg);
+        mainDiv.appendChild(imgContainer);
 
 		if (info.text) {
-			const txtDiv = createText(info.text);
+			const txtDiv = createTextLayer(info.text);
 			mainDiv.appendChild(txtDiv);
-		}
+        }
 
 		// Extra wrapper div required to get around the way basiclightbox handles events
 		let mainWrapperDiv = document.createElement("div");
-		mainWrapperDiv.appendChild(mainDiv);
+        mainWrapperDiv.appendChild(mainDiv);
+        
 
 		let lb = lightbox.create(mainWrapperDiv, {
 			onShow: () => {
