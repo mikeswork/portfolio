@@ -7,6 +7,7 @@ import { headerMode } from "./Header";
 const transDur = `0.1s`;
 
 const Link = styled(NavLink)`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
