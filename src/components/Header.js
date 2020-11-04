@@ -1,7 +1,6 @@
 import React from "react";
 import { NavHashLink as NavLink } from "react-router-hash-link";
 import Nav from "./Nav";
-import pageData from "../data/pageData.json";
 import styled from "styled-components";
 import * as mixins from "../util/mixins";
 import Email from "./Email";
@@ -103,23 +102,23 @@ const Container = styled.div`
     `}
 `;
 
-export default function Header({ mode = headerMode.default, visible = true, id, to }) {
+export default function Header({ mode = headerMode.default, visible = true, ...props }) {
 	// The <h1> at the top will be a clickable NavLink if property "to" is set
-	const headerEl = to ? (
-		<Link to={to}>
-			<h1 id="main-header">{pageData.title}</h1>
+	const headerEl = props.to ? (
+		<Link to={props.to}>
+			<h1>{props.title}</h1>
 		</Link>
 	) : (
-		<h1 id="main-header">{pageData.title}</h1>
+		<h1>{props.title}</h1>
 	);
 
 	return (
-		<Container id={id} visible={visible} $mode={mode}>
+		<Container id={props.id} visible={visible} $mode={mode}>
 			{headerEl}
 
             <Email visible={mode === headerMode.full}/>
 
-			<Nav pages={[pageData.pages.web, pageData.pages.resume, pageData.pages.video]} mode={mode} />
+			<Nav pages={props.navPages} mode={mode} />
 		</Container>
 	);
 }

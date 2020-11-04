@@ -1,9 +1,12 @@
 {
-    "title": "Michael Richardson - Web Dev",
+    "header": {
+        "title": "Michael Richardson - Web Dev",
+        "path": "header"
+    },
     "pages": {
         "web": {
             "title": "Web",
-            "path": "/webdev/#web",
+            "path": "a#web",
             "content": [
                 {
                     "thumbSrc": "./self-thumb.jpg",
@@ -151,7 +154,7 @@
         },
         "resume": {
             "title": "Resume",
-            "path": "/resume/#resume",
+            "path": "b#resume",
             "content": {
                 "skills": [
                     "HTML, CSS, JavaScript",
@@ -263,7 +266,7 @@
         },
         "video": {
             "title": "Video",
-            "path": "/video/#video",
+            "path": "c#video",
             "content": [
                 {
                     "title": "Palouse Heritage",

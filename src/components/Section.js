@@ -6,12 +6,11 @@ import * as mixins from "../util/mixins";
 import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
 import topPng from "../img/mountains-abstract-top-bg.png";
 
-const Sect = function (props) {
+const Sect = function ({path = "", ...props}) {
     // console.log(props)
-    const splitUrl = props.path.split("#");
-    const sectId = splitUrl[splitUrl.length-1];
+    const sectId = path.split("#").pop();
     
-    const scrolledToCurrSect = useScrolledTo(sectId);
+    const scrolledToCurrSect = useScrolledTo(`#${sectId}`);
 
 	return (
 		<div className={props.className} id={sectId}>
@@ -19,7 +18,7 @@ const Sect = function (props) {
 
 			<div className="content">{props.children}</div>
 
-			{scrolledToCurrSect && <Redirect to={props.path}/>}
+			{scrolledToCurrSect && <Redirect to={path}/>}
 		</div>
 	);
 };
