@@ -169,14 +169,12 @@
                     "UI/UX design",
                     "C# and .NET",
                     "UWP and WPF",
-                    "PHP",
                     "CPP experience",
                     "Writing",
                     "Photoshop",
                     "Illustrator",
                     "After Effects (and JSX)",
                     "Video editing / publishing",
-                    "Project management",
                     "Unity"
                 ],
                 "experience": [
@@ -215,7 +213,6 @@
                         "responsibilities": [
                             "Designed website concepts for clients (in Photoshop and Illustrator).",
                             "Implemented rich, interactive web content using HTML, CSS, JavaScript, Ajax, jQuery, PHP, ActionScript, and ASP.NET (C#).",
-                            "Coded HTML emails.",
                             "Created a Content Management System that allowed users to easily make regular updates to their site.",
                             "Outsourced projects and managed development teams."
                         ]
@@ -238,7 +235,7 @@
                             "Created interactive modules that were used in many e-learning sites.",
                             "Worked with project management to troubleshoot online training sites and fix bugs.",
                             "Created graphics and designs in Photoshop.",
-                            "Edited video in After Effects and imported into e-learning modules."
+                            "Generated videos in After Effects and imported into e-learning modules."
                         ]
                     },
                     {
@@ -279,6 +276,10 @@
                 {
                     "title": "Winston",
                     "src": "https://www.youtube.com/embed/0iA0aykvtgo"
+                },
+                {
+                    "title": "Carl Jung on Self-Knowledge",
+                    "src": "https://www.youtube.com/embed/GIgELuEYB_A"
                 }
             ]
         }
