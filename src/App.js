@@ -45,11 +45,16 @@ export default function App() {
     const [showSecondHead, setShowSecondHead] = useState();
     useScrolledTo(`#${pageData.header.path}`, isIntersecting => setShowSecondHead(!isIntersecting));
 
+    // When the user scrolls up to the top, the url/route needs to be reset to "/".
+    // We do this by triggering a Redirect to "/" using "atTop" state const, instead of 
+    // useHistory() because useHistory conflicts with Router at this level in the hierarchy.
     const [atTop, setAtTop] = useState();
 	useScrolledTo(`#${pageData.header.path} h1`, isIntersecting => setAtTop(isIntersecting));
 
 	return (
 		<Router hashType="noslash">
+            {atTop && <Redirect to={"/"} />}
+            
 			<AppContent className="App viewing-content" id="mainApp">
 				<Header
 					id={pageData.header.path}
@@ -94,8 +99,6 @@ export default function App() {
 				</Suspense>
 
 				<Email margin="1em 0 3em" />
-
-				{atTop && <Redirect to={"/"} />}
 			</AppContent>
 		</Router>
 	);

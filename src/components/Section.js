@@ -1,25 +1,31 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import useScrolledTo from "../util/useScrolledTo";
 import * as mixins from "../util/mixins";
 import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
 import topPng from "../img/mountains-abstract-top-bg.png";
 
-const Sect = function ({path = "", ...props}) {
-    // console.log(props)
-    const sectId = path.split("#").pop();
-    const [scrolledToCurrSect, setScrolledToCurrSect] = useState();
+const Sect = function ({ path = "", ...props }) {
+	// console.log("rendering", path, "section")
+	const sectId = path.split("#").pop();
 
-    useScrolledTo(`#${sectId}`, isIntersecting => setScrolledToCurrSect(isIntersecting), [0.3, 0.4, 0.5, 0.6, 0.7]);
+    const history = useHistory();
+    
+    // Toggle which section is indicated in the nav using the hash route
+    useScrolledTo(
+		`#${sectId}`,
+		(isIntersecting) => {
+			if (path && isIntersecting) history.replace(path);
+		},
+		[0.3, 0.4, 0.5, 0.6, 0.7]
+	);
 
 	return (
 		<div className={props.className} id={sectId}>
 			<h2>{props.title}</h2>
 
 			<div className="content">{props.children}</div>
-
-			{scrolledToCurrSect && <Redirect to={path}/>}
 		</div>
 	);
 };
@@ -40,11 +46,11 @@ const Section = styled(Sect)`
 		text-align: center;
 		font-size: 2.5em;
 		${mixins.letterSpace()}
-    }
-    
-    .content {
-        padding: 40px 3vw 75px;
-    }
+	}
+
+	.content {
+		padding: 40px 3vw 75px;
+	}
 `;
 
 export default Section;
