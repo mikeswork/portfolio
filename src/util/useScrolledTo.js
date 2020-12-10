@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-export default function useScrolledTo(queryString, threshold = 0.5) {
-    const [scrolledToTarget, setScrolledToTarget] = useState(false);
-
+export default function useScrolledTo(queryString, callback, thold = 0) {
 	useEffect(() => {
 		// console.log("[useEffect]")
 		if (
@@ -11,17 +9,15 @@ export default function useScrolledTo(queryString, threshold = 0.5) {
 			"intersectionRatio" in window.IntersectionObserverEntry.prototype
 		) {
 			let observer = new IntersectionObserver((entries) => {
-				setScrolledToTarget(entries[0].isIntersecting);
-			}, {threshold: threshold});
+                callback(entries[0].isIntersecting);
+			}, {threshold: thold});
             
             const target = document.querySelector(queryString);
 			if (target) observer.observe(target);
 
 			return () => {
-				observer.disconnect();
+				observer.unobserve(target);
 			};
 		}
-    });
-    
-    return scrolledToTarget;
+    }, [queryString, callback, thold]);
 }

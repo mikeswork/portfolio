@@ -20,10 +20,10 @@ export function dropShadow() {
 
 export function twitchDown(delay = `0s`, distance = `25px`) {
     const twitch = keyframes`
-        2% {
+        1% {
             transform: translateY(${distance});
         }
-        7% {
+        4% {
             transform: translateY(0)
         }
     `;
@@ -31,7 +31,7 @@ export function twitchDown(delay = `0s`, distance = `25px`) {
     return css`
         animation-name: ${twitch};
         animation-delay: ${delay};
-        animation-duration: 4s;
+        animation-duration: 8s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
     `

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { HashRouter as Router, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
@@ -42,8 +42,11 @@ const AppContent = styled.div`
 `;
 
 export default function App() {
-	const showSecondHead = !useScrolledTo(`#${pageData.header.path}`, 0);
-	const atTop = useScrolledTo(`#${pageData.header.path} h1`, 0);
+    const [showSecondHead, setShowSecondHead] = useState();
+    useScrolledTo(`#${pageData.header.path}`, isIntersecting => setShowSecondHead(!isIntersecting));
+
+    const [atTop, setAtTop] = useState();
+	useScrolledTo(`#${pageData.header.path} h1`, isIntersecting => setAtTop(isIntersecting));
 
 	return (
 		<Router hashType="noslash">

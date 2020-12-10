@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import useScrolledTo from "../util/useScrolledTo";
@@ -9,8 +9,9 @@ import topPng from "../img/mountains-abstract-top-bg.png";
 const Sect = function ({path = "", ...props}) {
     // console.log(props)
     const sectId = path.split("#").pop();
-    
-    const scrolledToCurrSect = useScrolledTo(`#${sectId}`);
+    const [scrolledToCurrSect, setScrolledToCurrSect] = useState();
+
+    useScrolledTo(`#${sectId}`, isIntersecting => setScrolledToCurrSect(isIntersecting), [0.3, 0.4, 0.5, 0.6, 0.7]);
 
 	return (
 		<div className={props.className} id={sectId}>
