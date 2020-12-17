@@ -1,7 +1,7 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import useScrolledTo from "../util/useScrolledTo";
+// import useScrolledTo from "../util/useScrolledTo";
 import * as mixins from "../util/mixins";
 import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
 import topPng from "../img/mountains-abstract-top-bg.png";
@@ -10,16 +10,17 @@ const Sect = function ({ path = "", ...props }) {
 	// console.log("rendering", path, "section")
 	const sectId = path.split("#").pop();
 
-    const history = useHistory();
+    // const history = useHistory();
     
     // Toggle which section is indicated in the nav using the hash route
-    useScrolledTo(
-		`#${sectId}`,
-		(isIntersecting) => {
-			if (path && isIntersecting) history.replace(path);
-		},
-		[0.3, 0.4, 0.5, 0.6, 0.7]
-	);
+    // useScrolledTo(
+	// 	`#${sectId}`,
+	// 	(isIntersecting) => {
+    //         console.log("is?", isIntersecting, path)
+	// 		if (path && isIntersecting) history.replace(path);
+	// 	},
+	// 	[0.3, 0.4, 0.5, 0.6, 0.7]
+	// );
 
 	return (
 		<div className={props.className} id={sectId}>

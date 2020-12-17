@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as lightbox from "basiclightbox";
-import { snapPts } from "../util/mixins";
+import { snapPts, dropShadow } from "../util/mixins";
 
 const images = require.context("../img");
 
@@ -102,11 +102,17 @@ const openLightbox = (info) => {
 	};
 };
 
-
 const thumb = (props) => {
+	const gitHub = props.info.text.gitHub && props.info.text.gitHub.url;
+
 	return (
 		<div className={props.className}>
 			<img src={props.tSrc} alt="" onClick={openLightbox.bind(null, props.info)} />
+			{gitHub && (
+				<a href={gitHub} className="github-thumb-link" target="_blank" rel="noopener noreferrer">
+					GitHub
+				</a>
+			)}
 		</div>
 	);
 };
@@ -114,6 +120,7 @@ const thumb = (props) => {
 const clipPath = `polygon(0 0, calc(100% - 30px) 0, 100% 100%, 30px 100%)`;
 
 const Thumbnail = styled(thumb)`
+	position: relative;
 	margin: 0 0 30px;
 	padding: 2px;
 	background-color: #d1d4d8;
@@ -123,6 +130,27 @@ const Thumbnail = styled(thumb)`
 	img {
 		display: block;
 		clip-path: ${clipPath};
+	}
+
+	a.github-thumb-link {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding: 1em 1em 1em 2em;
+		background-image: url(${images("./github-bg.png")});
+		background-repeat: no-repeat;
+		background-position: 0% 41%;
+		color: black;
+		font-family: sans-serif;
+		font-size: 0.85em;
+		font-weight: bold;
+		text-decoration: none;
+		${dropShadow}
+		transition: padding 0.2s;
+
+		&:hover {
+			padding-right: 2em;
+		}
 	}
 
 	@media (${snapPts.maxSmall}) {
