@@ -12,11 +12,11 @@ export default function useScrolledTo(queryString, callback, thold = 0) {
                 callback(entries[0].isIntersecting);
 			}, {threshold: thold});
             
-            const target = document.querySelector(queryString);
-			if (target) observer.observe(target);
+            const targets = document.querySelectorAll(queryString);
+            targets.forEach(t => observer.observe(t))
 
 			return () => {
-				observer.unobserve(target);
+				observer.disconnect();
 			};
 		}
     }, [queryString, callback, thold]);
