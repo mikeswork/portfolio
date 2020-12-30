@@ -12,7 +12,7 @@ const createTextLayer = (text) => {
 
 	if (text.header) {
 		let head = document.createElement("h2");
-		head.style.cssText = "text-align: center; text-transform: uppercase";
+		head.style.cssText = "text-transform: uppercase";
 		head.textContent = text.header;
 		txtDiv.appendChild(head);
 	}
