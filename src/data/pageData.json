@@ -1,287 +1,287 @@
 {
-    "header": {
-        "title": "Michael Richardson - Web Dev",
-        "path": "header"
-    },
-    "pages": {
-        "web": {
-            "title": "Web",
-            "path": "a#web",
-            "content": [
-                {
-                    "thumbSrc": "./self-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./self.gif",
-                        "text": {
-                            "header": "This Portfolio",
-                            "paragraphs": [
-                                "The site you are looking at--built scalable and responsive in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
-                                "It was an interesting challenge to have a floating header, which is initially hidden, and then displays to indicate the current section as the user browses through them (either by scrolling down the page or by using the navigation buttons). The right strategy turned out to be using the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly (which display/hide the floating header and highlight the nav button of the section currently being viewed). Extracting this \"effect\" logic out into util/useScrolledTo.js, and importing it as a state hook in the components that should respond to scrolling, felt like an elegant approach."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub",
-                                "url": "https://github.com/mikeswork/portfolio"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./gamescom-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./gamescom.jpg",
-                        "text": {
-                            "header": "Games.com",
-                            "paragraphs": [
-                                "A React site that loads Unity WebGL games. Obviously, it was vital to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
-                                "An additional layer of complexity was that the client wanted to store the settings and user's progress for each game, which would allow a seamless experience when changing devices. I met this requirement by creating a JavaScript control layer between the React site and Unity content. I used the IndexedDB browser API to capture game data, save it to an AWS database, and load it into IndexedDB on each device that the user logged in on."
-                            ]
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./awards-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./awards.jpg",
-                        "text": {
-                            "header": "Awards 2020",
-                            "paragraphs": [
-                                "I worked on the UI and functionality of a tricky module called Ballot Picker. The outdated state of this component required me to completely refactor it--the client wanted new game mechanics and a recent upgrade to our framework caused it to not run at all.",
-                                "The Ballot Picker is a complex experience that pulls in movie and award data from a JSON file, allows the user to select their choice for each category, and stores these choices in a DynamoDB table. After the award show has finished airing, the module automatically unlocks all the categories so that users can browse through them, see the choice they made for each, and compare the actual award winner with the option they selected. Users are rewarded points for any of their choices that match the winners. In the final screen, they can see their overall score and the winner for each category (e.g. \"Best Picture\", \"Best Actress\", etc.)"
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub", 
-                                "url": "https://github.com/mikeswork/games/tree/master/awards"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./hallmark-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./hallmark.jpg",
-                        "text": {
-                            "header": "Hallmark",
-                            "paragraphs": [
-                               "For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes active and the user can interact with it. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. This maximized the infinite visual permutations and interaction behaviors that we planned to have in the future.", 
-                               "When a user clicks on an advent node, it launches a separate game engine based on the game type assigned to that node in the data."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub", 
-                                "url": "https://github.com/mikeswork/games/tree/master/hallmark"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./hbo-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./hbo.jpg",
-                        "text": {
-                            "header": "HBO", 
-                            "paragraphs": [
-                                "I built the complex layout and visuals of this site using the Advent component that I had created for the previous project (\"Movie Challenge\"). The flexibility of the module allows us to apply a completely different style each time that we use it without needing to enhance or refactor the original component.", 
-                                "Visually, this site pushed the boundaries of what we had done before. It needed to run on limited hardware, so I employed a combination of compressed images, video, and even animated gifs."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub", 
-                                "url": "https://github.com/mikeswork/games/tree/master/hbo"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./hub-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./hub.jpg",
-                        "text": {
-                            "header": "Hub",
-                            "paragraphs": [
-                                "This was an ambitious project with many moving parts, which I built with one other dev (we both worked on all the components). By developing an easily customizable site, we succeeded at creating an experience that users would want to play in and return to. An administrator is able to keep things fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and spotlighting different games. To further improve retention, each user automatically gets a default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. After they decide to register their account, they receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various fun items (some animated via gifs or a sprite player).",
-                                "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
-                                "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (i.e. css/js animation vs. video)."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub", 
-                                "url": "https://github.com/mikeswork/games/tree/master/hub"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./shark-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./shark-seal.jpg",
-                        "text": {
-                            "header": "Shark Week",
-                            "paragraphs": [
-                                "Backbone.js, AWS API (RESTful), and SASS.",
-                                "I built a custom game that generates a map on which the user navigates around. Each point on the map either loads another engine for a mini-game, or plays a video. The user advances across the map trying to get to the finish, where they receive a custom endscreen with their score (and a payoff video, if url is provided). The entire game is generated from JSON data, which can be customized to serve up many unique games."
-                            ]
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./name-movie-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./name-movie.jpg",
-                        "text": {
-                            "header": "Name the Movie",
-                            "paragraphs": [
-                                "This Alexa app is a fun movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental in-app purchasing API that Amazon had not officially released at the time of development.",
-                                "Name the Movie is primarily a voice-only game, but I did create a UI for devices with screens that displays each question, answer, and the user's score at the end. These templates, loosely based on HTML, are in the /apl/ folder at the GitHub link below."
-                            ],
-                            "gitHub": {
-                                "text": "See Code on GitHub",
-                                "url": "https://github.com/mikeswork/games/tree/master/alexa"
-                            }
-                        }
-                    }
-                },
-                {
-                    "thumbSrc": "./outlander-thumb.jpg",
-                    "info": {
-                        "imgSrc": "./outlander.jpg",
-                        "text": {
-                            "header": "Outlander",
-                            "paragraphs": [
-                                "Backbone.js, AWS API (RESTful), and SASS.",
-                                "I created a sweepstakes module that allows users to register to win a prize. Once they have signed up, they can see a countdown to the end of the contest, and the results (only if the admin has set the data and the current date/time falls after the conclusion of the contest). Parameters for each contest are set in DynamoDB via JSON upload from Google Sheets."
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "resume": {
-            "title": "Resume",
-            "path": "b#resume",
-            "content": {
-                "skills": [
-                    "HTML, CSS, JavaScript",
-                    "TypeScript",
-                    "React (JS and Native)",
-                    "jQuery",
-                    "Backbone",
-                    "Git",
-                    "REST",
-                    "Amazon Web Services",
-                    "SQL",
-                    "UI/UX design",
-                    "C# and .NET",
-                    "UWP and WPF",
-                    "CPP experience",
-                    "Writing",
-                    "Photoshop",
-                    "Illustrator",
-                    "After Effects (and JSX)",
-                    "Video editing / publishing",
-                    "Unity"
-                ],
-                "experience": [
-                    {
-                        "title": "Web/UI Developer",
-                        "years": "9/2018 - 4/2020",
-                        "company": "Exponential Entertainment Inc.",
-                        "responsibilities": [
-                            "Built proof-of concept React site that hosted and integrated with Unity games. Challenges were learning how to create games in Unity, scaling content across devices, share user game preferences between multiple devices, and simulate a different virtual gamepad control for each unique game on mobile.",
-                            "Used Amazon Web Services to enhance HTML 5 games (S3, DynamoDB, Lambda, and CDN).",
-                            "Looked for opportunities to add value to the team by contributing my design and motion design experience. Using Photoshop and After Effects, I assisted designers by generating comps and visual content.",
-                            "Created complicated, scalable web apps with images, sounds, videos, and advanced user interactions.",
-                            "Designed and developed Alexa web app (architected, developed, UI, data, testing, etc.)",
-                            "Worked in MVC architecture, using HTML, CSS, React, JavaScript, jQuery, and Backbone."
-                        ]
-                    },
-                    {
-                        "title": "Design Developer",
-                        "years": "1/2012 - 2/2018",
-                        "company": "Microsoft",
-                        "responsibilities": [
-                            "Had ownership of the fit and finish (visuals, UI, accessibility, etc.) of the Windows 10 Photos app (XAML/C# UWP). My role was to discover and fix deviations from the design comps and help developers adhere to standards and requirements. I frequently met and worked with designers, project managers, and developers to ensure that the end-product met both visual and technical requirements. It was also my responsibility to assess new work items and assign them to other engineers.",
-                            "Assisted designers by creating complex prototypes in order to test out concepts and ideas, using the best tool for each case: XAML/C#, HTML/JavaScript, etc.",
-                            "Demonstrated having a good eye for matching product UI to comps, motion studies, etc.",
-                            "Created complicated, scalable UI, adding motion and effects for user interactions (XAML and HTML).",
-                            "Investigated and implemented new .NET API’s to keep our product aligned to evolving platform and design standards.",
-                            "Instructed developers on how to follow proper UI coding procedures.",
-                            "Worked in a complex development environment that required precise steps and methods to operate in.",
-                            "Trained new team members and helped them throughout the entire release cycle."
-                        ]
-                    },
-                    {
-                        "title": "Web Designer and Developer",
-                        "years": "7/2008 - 12/2011",
-                        "company": "Sole proprietor",
-                        "responsibilities": [
-                            "Designed website concepts for clients (in Photoshop and Illustrator).",
-                            "Implemented rich, interactive web content using HTML, CSS, JavaScript, Ajax, jQuery, PHP, ActionScript, and ASP.NET (C#).",
-                            "Created a Content Management System that allowed users to easily make regular updates to their site.",
-                            "Outsourced projects and managed development teams."
-                        ]
-                    },
-                    {
-                        "title": "Multiple Advertising Agencies",
-                        "years": "2008 - 2011",
-                        "company": "",
-                        "responsibilities": [
-                            "Web development for Lionfish, Evolve itv, Razorfish, RocketDog Communications, DNA, and Perfect Pixels Media Group.",
-                            "Worked in fast-paced environments with many simultaneous projects and quick deadlines.",
-                            "Familiar with quick turnaround and working in a team to deliver product to client on time."
-                        ]
-                    },
-                    {
-                        "title": "E-Learning Developer",
-                        "years": "8/2009 - 6/2010",
-                        "company": "Intrepid Learning Solutions",
-                        "responsibilities": [
-                            "Created interactive modules that were used in many e-learning sites.",
-                            "Worked with project management to troubleshoot online training sites and fix bugs.",
-                            "Created graphics and designs in Photoshop.",
-                            "Generated videos in After Effects and imported into e-learning modules."
-                        ]
-                    },
-                    {
-                        "title": "Web Designer",
-                        "years": "1/2009 - 4/2009",
-                        "company": "Contract at Microsoft Research",
-                        "responsibilities": [
-                            "Created and designed website concepts in Photoshop and Illustrator.",
-                            "Implemented and debugged experimental search engine that used feed of real Bing search results.",
-                            "Created documents and graphics for print using InDesign."
-                        ]
-                    },
-                    {
-                        "title": "Web Developer",
-                        "years": "9/2007 - 9/2008",
-                        "company": "Contract at Microsoft Bing",
-                        "responsibilities": [
-                            "Developed site prototypes using different web technologies (HTML, CSS, XML, JavaScript, Ajax, and jQuery).",
-                            "Used Flash and ActionScript to prototype various web user interfaces.",
-                            "Created and designed visual effects for web UI."                            
-                        ]
-                    }
-                ]
+  "header": {
+    "title": "Michael Richardson - Web Dev",
+    "path": "header"
+  },
+  "pages": {
+    "web": {
+      "title": "Web",
+      "path": "a#web",
+      "content": [
+        {
+          "thumbSrc": "./self-thumb.jpg",
+          "info": {
+            "imgSrc": "./self.gif",
+            "text": {
+              "header": "This Portfolio",
+              "paragraphs": [
+                "The site you are looking at--built scalable and responsive in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
+                "It was an interesting challenge to have a floating header, which is initially hidden, and then displays to indicate the current section as the user browses through them (either by scrolling down the page or by using the navigation buttons). The right strategy turned out to be using the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly (which display/hide the floating header and highlight the nav button of the section currently being viewed). Extracting this \"effect\" logic out into util/useScrolledTo.js, and importing it as a state hook in the components that should respond to scrolling, felt like an elegant approach."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/portfolio"
+              }
             }
+          }
         },
-        "video": {
-            "title": "Video",
-            "path": "c#video",
-            "content": [
-                {
-                    "title": "Palouse Heritage",
-                    "src": "https://player.vimeo.com/video/302378063"
-                },
-                {
-                    "title": "Silent Movie",
-                    "src": "https://www.youtube.com/embed/BuudPA9UPsg"
-                },
-                {
-                    "title": "Winston",
-                    "src": "https://www.youtube.com/embed/0iA0aykvtgo"
-                },
-                {
-                    "title": "Carl Jung on Self-Knowledge",
-                    "src": "https://www.youtube.com/embed/GIgELuEYB_A"
-                }
-            ]
+        {
+          "thumbSrc": "./gamescom-thumb.jpg",
+          "info": {
+            "imgSrc": "./gamescom.jpg",
+            "text": {
+              "header": "Games.com",
+              "paragraphs": [
+                "A React site that loads Unity WebGL games. Obviously, it was vital to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
+                "An additional layer of complexity was that the client wanted to store the settings and user's progress for each game, which would allow a seamless experience when changing devices. I met this requirement by creating a JavaScript control layer between the React site and Unity content. I used the IndexedDB browser API to capture game data, save it to an AWS database, and load it into IndexedDB on each device that the user logged in on."
+              ]
+            }
+          }
+        },
+        {
+          "thumbSrc": "./awards-thumb.jpg",
+          "info": {
+            "imgSrc": "./awards.jpg",
+            "text": {
+              "header": "Awards 2020",
+              "paragraphs": [
+                "I worked on the UI and functionality of a tricky module called Ballot Picker. The outdated state of this component required me to completely refactor it--the client wanted new game mechanics and a recent upgrade to our framework caused it to not run at all.",
+                "The Ballot Picker is a complex experience that pulls in movie and award data from a JSON file, allows the user to select their choice for each category, and stores these choices in a DynamoDB table. After the award show has finished airing, the module automatically unlocks all the categories so that users can browse through them, see the choice they made for each, and compare the actual award winner with the option they selected. Users are rewarded points for any of their choices that match the winners. In the final screen, they can see their overall score and the winner for each category (e.g. \"Best Picture\", \"Best Actress\", etc.)"
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/awards"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "./hallmark-thumb.jpg",
+          "info": {
+            "imgSrc": "./hallmark.jpg",
+            "text": {
+              "header": "Hallmark",
+              "paragraphs": [
+                "For this site, I built the UI and created a new module called Advent. Advent pulls in data from a Google sheet containing text, image, and game parameters. The component creates a scrollable layout of nodes in the style of an advent calendar. If a node's unlock time falls on or before the current date, it becomes active and the user can interact with it. Each node has a completed, locked, unlocked, and currently selected visual state--each state can have a unique appearance. This maximized the infinite visual permutations and interaction behaviors that we planned to have in the future.",
+                "When a user clicks on an advent node, it launches a separate game engine based on the game type assigned to that node in the data."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/hallmark"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "./hbo-thumb.jpg",
+          "info": {
+            "imgSrc": "./hbo.jpg",
+            "text": {
+              "header": "HBO",
+              "paragraphs": [
+                "I built the complex layout and visuals of this site using the Advent component that I had created for the previous project (\"Movie Challenge\"). The flexibility of the module allows us to apply a completely different style each time that we use it without needing to enhance or refactor the original component.",
+                "Visually, this site pushed the boundaries of what we had done before. It needed to run on limited hardware, so I employed a combination of compressed images, video, and even animated gifs."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/hbo"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "./hub-thumb.jpg",
+          "info": {
+            "imgSrc": "./hub.jpg",
+            "text": {
+              "header": "Hub",
+              "paragraphs": [
+                "This was an ambitious project with many moving parts, which I built with one other dev (we both worked on all the components). By developing an easily customizable site, we succeeded at creating an experience that users would want to play in and return to. An administrator is able to keep things fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and spotlighting different games. To further improve retention, each user automatically gets a default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. After they decide to register their account, they receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various fun items (some animated via gifs or a sprite player).",
+                "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
+                "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (i.e. css/js animation vs. video)."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/hub"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "./shark-thumb.jpg",
+          "info": {
+            "imgSrc": "./shark-seal.jpg",
+            "text": {
+              "header": "Shark Week",
+              "paragraphs": [
+                "Backbone.js, AWS API (RESTful), and SASS.",
+                "I built a custom game that generates a map on which the user navigates around. Each point on the map either loads another engine for a mini-game, or plays a video. The user advances across the map trying to get to the finish, where they receive a custom endscreen with their score (and a payoff video, if url is provided). The entire game is generated from JSON data, which can be customized to serve up many unique games."
+              ]
+            }
+          }
+        },
+        {
+          "thumbSrc": "./name-movie-thumb.jpg",
+          "info": {
+            "imgSrc": "./name-movie.jpg",
+            "text": {
+              "header": "Name the Movie",
+              "paragraphs": [
+                "This Alexa app is a fun movie guessing game for kids. I architected, programmed, and tested it. This was a challenging app that stretched the capabilities of Alexa by mixing speech strings with recorded voice-over mp3's and utilizing an experimental in-app purchasing API that Amazon had not officially released at the time of development.",
+                "Name the Movie is primarily a voice-only game, but I did create a UI for devices with screens that displays each question, answer, and the user's score at the end. These templates, loosely based on HTML, are in the /apl/ folder at the GitHub link below."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/alexa"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "./outlander-thumb.jpg",
+          "info": {
+            "imgSrc": "./outlander.jpg",
+            "text": {
+              "header": "Outlander",
+              "paragraphs": [
+                "Backbone.js, AWS API (RESTful), and SASS.",
+                "I created a sweepstakes module that allows users to register to win a prize. Once they have signed up, they can see a countdown to the end of the contest, and the results (only if the admin has set the data and the current date/time falls after the conclusion of the contest). Parameters for each contest are set in DynamoDB via JSON upload from Google Sheets."
+              ]
+            }
+          }
         }
+      ]
+    },
+    "resume": {
+      "title": "Resume",
+      "path": "b#resume",
+      "content": {
+        "skills": [
+          "HTML, CSS, JavaScript",
+          "TypeScript",
+          "React (JS and Native)",
+          "jQuery",
+          "Backbone",
+          "Git",
+          "REST",
+          "Amazon Web Services",
+          "SQL",
+          "UI/UX design",
+          "C# and .NET",
+          "UWP and WPF",
+          "CPP experience",
+          "Writing",
+          "Photoshop",
+          "Illustrator",
+          "After Effects (and JSX)",
+          "Video editing / publishing",
+          "Unity"
+        ],
+        "experience": [
+          {
+            "title": "Web/UI Developer",
+            "years": "9/2018 - 4/2020",
+            "company": "Exponential Entertainment Inc.",
+            "responsibilities": [
+              "Built proof-of concept React site that hosted and integrated with Unity games. Challenges were learning how to create games in Unity, scaling content across devices, share user game preferences between multiple devices, and simulate a different virtual gamepad control for each unique game on mobile.",
+              "Used Amazon Web Services to enhance HTML 5 games (S3, DynamoDB, Lambda, and CDN).",
+              "Looked for opportunities to add value to the team by contributing my design and motion design experience. Using Photoshop and After Effects, I assisted designers by generating comps and visual content.",
+              "Created complicated, scalable web apps with images, sounds, videos, and advanced user interactions.",
+              "Designed and developed Alexa web app (architected, developed, UI, data, testing, etc.)",
+              "Worked in MVC architecture, using HTML, CSS, React, JavaScript, jQuery, and Backbone."
+            ]
+          },
+          {
+            "title": "Design Developer",
+            "years": "1/2012 - 2/2018",
+            "company": "Microsoft",
+            "responsibilities": [
+              "Had ownership of the fit and finish (visuals, UI, accessibility, etc.) of the Windows 10 Photos app (XAML/C# UWP). My role was to discover and fix deviations from the design comps and help developers adhere to standards and requirements. I frequently met and worked with designers, project managers, and developers to ensure that the end-product met both visual and technical requirements. It was also my responsibility to assess new work items and assign them to other engineers.",
+              "Assisted designers by creating complex prototypes in order to test out concepts and ideas, using the best tool for each case: XAML/C#, HTML/JavaScript, etc.",
+              "Demonstrated having a good eye for matching product UI to comps, motion studies, etc.",
+              "Created complicated, scalable UI, adding motion and effects for user interactions (XAML and HTML).",
+              "Investigated and implemented new .NET API’s to keep our product aligned to evolving platform and design standards.",
+              "Instructed developers on how to follow proper UI coding procedures.",
+              "Worked in a complex development environment that required precise steps and methods to operate in.",
+              "Trained new team members and helped them throughout the entire release cycle."
+            ]
+          },
+          {
+            "title": "Web Designer and Developer",
+            "years": "7/2008 - 12/2011",
+            "company": "Sole proprietor",
+            "responsibilities": [
+              "Designed website concepts for clients (in Photoshop and Illustrator).",
+              "Implemented rich, interactive web content using HTML, CSS, JavaScript, Ajax, jQuery, PHP, ActionScript, and ASP.NET (C#).",
+              "Created a Content Management System that allowed users to easily make regular updates to their site.",
+              "Outsourced projects and managed development teams."
+            ]
+          },
+          {
+            "title": "Multiple Advertising Agencies",
+            "years": "2008 - 2011",
+            "company": "",
+            "responsibilities": [
+              "Web development for Lionfish, Evolve itv, Razorfish, RocketDog Communications, DNA, and Perfect Pixels Media Group.",
+              "Worked in fast-paced environments with many simultaneous projects and quick deadlines.",
+              "Familiar with quick turnaround and working in a team to deliver product to client on time."
+            ]
+          },
+          {
+            "title": "E-Learning Developer",
+            "years": "8/2009 - 6/2010",
+            "company": "Intrepid Learning Solutions",
+            "responsibilities": [
+              "Created interactive modules that were used in many e-learning sites.",
+              "Worked with project management to troubleshoot online training sites and fix bugs.",
+              "Created graphics and designs in Photoshop.",
+              "Generated videos in After Effects and imported into e-learning modules."
+            ]
+          },
+          {
+            "title": "Web Designer",
+            "years": "1/2009 - 4/2009",
+            "company": "Contract at Microsoft Research",
+            "responsibilities": [
+              "Created and designed website concepts in Photoshop and Illustrator.",
+              "Implemented and debugged experimental search engine that used feed of real Bing search results.",
+              "Created documents and graphics for print using InDesign."
+            ]
+          },
+          {
+            "title": "Web Developer",
+            "years": "9/2007 - 9/2008",
+            "company": "Contract at Microsoft Bing",
+            "responsibilities": [
+              "Developed site prototypes using different web technologies (HTML, CSS, XML, JavaScript, Ajax, and jQuery).",
+              "Used Flash and ActionScript to prototype various web user interfaces.",
+              "Created and designed visual effects for web UI."
+            ]
+          }
+        ]
+      }
+    },
+    "video": {
+      "title": "Video",
+      "path": "c#video",
+      "content": [
+        {
+          "title": "Palouse Heritage",
+          "src": "https://www.youtube.com/embed/7zNnKXjaIsU"
+        },
+        {
+          "title": "Silent Movie",
+          "src": "https://www.youtube.com/embed/BuudPA9UPsg"
+        },
+        {
+          "title": "Winston",
+          "src": "https://www.youtube.com/embed/0iA0aykvtgo"
+        },
+        {
+          "title": "Carl Jung on Self-Knowledge",
+          "src": "https://www.youtube.com/embed/GIgELuEYB_A"
+        }
+      ]
     }
+  }
 }
