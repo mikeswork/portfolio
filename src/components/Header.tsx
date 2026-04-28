@@ -1,9 +1,9 @@
-import { NavHashLink as NavLink } from "react-router-hash-link";
 import Nav from "./Nav";
 import styled from "styled-components";
 import * as mixins from "../util/mixins";
 import Email from "./Email";
 import mountainBg from "../img/mountains-bg.jpg";
+import { NavLink } from "react-router-dom";
 
 export const headerMode = {
   default: "full",
@@ -17,7 +17,7 @@ const Link = styled(NavLink)`
   font-size: 1.25em;
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ $visible: boolean; $mode: string }>`
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ const Container = styled.div`
 
   h1 {
     margin: 0;
-    padding: 0 3vw;
+    padding: 4px 3vw 0;
     ${mixins.dropShadow()}
     text-align: center;
     text-transform: uppercase;
@@ -49,8 +49,7 @@ const Container = styled.div`
     }
 
     @media (${mixins.snapPts.maxSmall}) {
-      font-size: 2.5em;
-      padding: 1.5vh 3vw;
+      font-size: 2.6em;
     }
   }
 
@@ -96,7 +95,7 @@ const Container = styled.div`
     `}
 
     ${(props) =>
-    props.visible === false &&
+    props.$visible === false &&
     `
         opacity: 0;
         transform: translateY(-30%);
@@ -118,7 +117,7 @@ export default function Header({
   );
 
   return (
-    <Container id={props.id} visible={visible} $mode={mode}>
+    <Container id={props.id} $visible={visible} $mode={mode}>
       {headerEl}
 
       <Email visible={mode === headerMode.full} />

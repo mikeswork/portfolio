@@ -1,25 +1,47 @@
-import React from "react";
 import styled from "styled-components";
 import * as lightbox from "basiclightbox";
 import { snapPts, dropShadow } from "../util/mixins";
+import closeBtnSvg from "../img/close-btn.svg";
+import githubBgPng from "../img/github-bg.png";
+import { images } from "../util/helpers";
 
-const images = require.context("../img");
+interface GitHub {
+  url: string;
+  text?: string;
+}
 
-const createTextLayer = (text) => {
-  let txtDiv = document.createElement("div");
+interface Text {
+  header?: string;
+  paragraphs?: string[];
+  gitHub?: GitHub;
+}
+
+interface Info {
+  imgSrc: string;
+  text?: Text;
+}
+
+interface Props {
+  tSrc: string;
+  info: Info;
+  className?: string;
+}
+
+const createTextLayer = (text: Text) => {
+  const txtDiv = document.createElement("div");
   txtDiv.style.cssText =
     "padding: 1px 25px 15px; background-color: #000102; text-align: left; color: #d8d8d8; font-family: sans-serif; max-width: 900px;";
 
   if (text.header) {
-    let head = document.createElement("h2");
+    const head = document.createElement("h2");
     head.style.cssText = "text-transform: uppercase";
     head.textContent = text.header;
     txtDiv.appendChild(head);
   }
 
   if (text.paragraphs && text.paragraphs.length) {
-    text.paragraphs.forEach((par) => {
-      let parNode = document.createElement("p");
+    text.paragraphs.forEach((par: string) => {
+      const parNode = document.createElement("p");
       parNode.textContent = par;
       txtDiv.appendChild(parNode);
     });
@@ -27,7 +49,7 @@ const createTextLayer = (text) => {
 
   if (text.gitHub) {
     if (text.gitHub.url) {
-      let hlink = document.createElement("a");
+      const hlink = document.createElement("a");
       hlink.style.cssText = "text-transform: none; color: #8db2e6";
       hlink.href = text.gitHub.url;
       hlink.target = "_blank";
@@ -36,13 +58,13 @@ const createTextLayer = (text) => {
       // Prevent click on href from closing entire description
       hlink.onclick = (e) => e.stopPropagation();
 
-      let hlinkPara = document.createElement("p");
+      const hlinkPara = document.createElement("p");
       hlinkPara.appendChild(hlink);
       txtDiv.appendChild(hlinkPara);
     }
   }
 
-  let txtWrapperDiv = document.createElement("div");
+  const txtWrapperDiv = document.createElement("div");
   txtWrapperDiv.style.cssText =
     "background-color: transparent; transition: opacity 0.5s";
   txtWrapperDiv.appendChild(txtDiv);
@@ -55,21 +77,21 @@ const createTextLayer = (text) => {
   return txtWrapperDiv;
 };
 
-const openLightbox = (info) => {
-  let mainDiv = document.createElement("div");
+const openLightbox = (info: Info) => {
+  const mainDiv = document.createElement("div");
   mainDiv.style.cssText =
     "display: flex; flex-direction: column; align-items: center; max-height: 100vh; overflow-y: auto;";
 
-  let imgContainer = document.createElement("div");
+  const imgContainer = document.createElement("div");
   imgContainer.style.cssText = "position: relative; margin: 1vmin;";
 
-  let closeBtn = document.createElement("img");
+  const closeBtn = document.createElement("img");
   closeBtn.style.cssText =
     "position: absolute; top: 1vmin; right: 1vmin; width: 40px; filter: drop-shadow(3px 3px 5px black)";
-  closeBtn.src = images("./close-btn.svg");
+  closeBtn.src = closeBtnSvg;
   imgContainer.appendChild(closeBtn);
 
-  let mainImg = document.createElement("img");
+  const mainImg = document.createElement("img");
   mainImg.style.cssText = "max-width: 95vw;";
   mainImg.src = images(info.imgSrc);
 
@@ -82,10 +104,10 @@ const openLightbox = (info) => {
   }
 
   // Extra wrapper div required to get around the way basiclightbox handles events
-  let mainWrapperDiv = document.createElement("div");
+  const mainWrapperDiv = document.createElement("div");
   mainWrapperDiv.appendChild(mainDiv);
 
-  let lb = lightbox.create(mainWrapperDiv, {
+  const lb = lightbox.create(mainWrapperDiv, {
     onShow: () => {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = "15px";
@@ -103,8 +125,8 @@ const openLightbox = (info) => {
   };
 };
 
-const thumb = (props) => {
-  const gitHub = props.info.text.gitHub && props.info.text.gitHub.url;
+const thumb = (props: Props) => {
+  const gitHub = props.info.text?.gitHub?.url;
 
   return (
     <div className={props.className}>
@@ -147,7 +169,7 @@ const Thumbnail = styled(thumb)`
     bottom: 0;
     right: 0;
     padding: 1em 1em 1em 2em;
-    background-image: url(${images("./github-bg.png")});
+    background-image: url(${githubBgPng});
     background-repeat: no-repeat;
     background-position: 0% 41%;
     color: black;

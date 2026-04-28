@@ -1,5 +1,9 @@
-import React, { Suspense, useState } from "react";
-import { HashRouter as Router, Redirect } from "react-router-dom";
+import React, { Suspense, useEffect, useState } from "react";
+import {
+  HashRouter as Router,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
 import Email from "./components/Email";
@@ -44,6 +48,7 @@ const AppContent = styled.div`
 
 export default function App() {
   const [showSecondHead, setShowSecondHead] = useState();
+
   useScrolledTo(`#${pageData.header.path}`, (isIntersecting) =>
     setShowSecondHead(!isIntersecting),
   );
@@ -57,8 +62,8 @@ export default function App() {
   );
 
   return (
-    <Router hashType="noslash">
-      {atTop && <Redirect to={"/"} />}
+    <Router>
+      <Redirect to={atTop ? "/" : null} />
 
       <AppContent className="App viewing-content" id="mainApp">
         <Header
@@ -112,7 +117,33 @@ export default function App() {
         </Suspense>
 
         <Email margin="1em 0 3em" />
+
+        <ScrollToHash />
       </AppContent>
     </Router>
   );
+}
+
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }, [location]);
+
+  return null;
+}
+
+function Redirect({ to = "/" }: { to: string }) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!to) return;
+
+    navigate(to);
+  }, [navigate, to]);
+
+  return null;
 }

@@ -5,64 +5,64 @@ import { headerMode } from "./Header";
 import * as mixins from "../util/mixins";
 
 const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-    align-items: center;
-    margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8vh;
 
-	${(props) =>
-		props.$mode === headerMode.stickTop &&
-		`
+  ${(props) =>
+    props.$mode === headerMode.stickTop &&
+    `
 			flex-direction: row;
 			justify-content: center;
 			margin-bottom: unset;
         `}
 
-	${(props) =>
-		props.$mode === headerMode.full &&
-		!props.$suppressTwitch &&
-		css`
-			a:nth-child(1) {
-				${mixins.twitchDown("2.5s", "15px")}
-			}
+  ${(props) =>
+    props.$mode === headerMode.full &&
+    !props.$suppressTwitch &&
+    css`
+      a:nth-child(1) {
+        ${mixins.twitchDown("2.5s", "15px")}
+      }
 
-			a:nth-child(2) {
-				min-width: 225px;
-				${mixins.twitchDown("2.55s", "15px")}
-			}
+      a:nth-child(2) {
+        min-width: 225px;
+        ${mixins.twitchDown("2.55s", "15px")}
+      }
 
-			a:nth-child(3) {
-				min-width: 200px;
-				${mixins.twitchDown("2.6s", "15px")}
-			}
-		`}
+      a:nth-child(3) {
+        min-width: 200px;
+        ${mixins.twitchDown("2.6s", "15px")}
+      }
+    `}
 `;
 
-export default function Nav({ mode = headerMode.default, pages, currPage }) {
-	var uniqueId = 0;
+export default function Nav({ mode = headerMode.default, pages }) {
+  const [isInteracting, setIsInteracting] = useState(false);
 
-	const [isInteracting, setIsInteracting] = useState(false);
+  const interactionTest = (e) => {
+    const event = e.nativeEvent.type;
 
-	const interactionTest = (e) => {
-		const event = e.nativeEvent.type;
+    if (event === "mouseover" && !isInteracting) {
+      setIsInteracting(true);
+    } else if (event === "mouseout" && isInteracting) {
+      setIsInteracting(false);
+    }
+  };
 
-		if (event === "mouseover" && !isInteracting) {
-			setIsInteracting(true);
-		} else if (event === "mouseout" && isInteracting) {
-			setIsInteracting(false);
-		}
-	};
-
-	return (
-		<Container
-			$mode={mode}
-			onMouseOver={interactionTest}
-			onMouseOut={interactionTest}
-			$suppressTwitch={isInteracting}
-		>
-			{pages.map((page) => {
-				return <NavButton key={uniqueId++} text={page.title} to={page.path} currPage={currPage} mode={mode} />;
-			})}
-		</Container>
-	);
+  return (
+    <Container
+      $mode={mode}
+      onMouseOver={interactionTest}
+      onMouseOut={interactionTest}
+      $suppressTwitch={isInteracting}
+    >
+      {pages.map((page, i) => {
+        return (
+          <NavButton key={i} text={page.title} to={page.path} mode={mode} />
+        );
+      })}
+    </Container>
+  );
 }

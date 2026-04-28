@@ -1,68 +1,71 @@
-import React from 'react';
-import { NavHashLink as NavLink } from 'react-router-hash-link';
-import styled from 'styled-components';
-import * as mixins from '../util/mixins'
+import styled from "styled-components";
+import * as mixins from "../util/mixins";
 import { headerMode } from "./Header";
+import { NavLink } from "react-router-dom";
 
 const transDur = `0.1s`;
 
-const Link = styled(NavLink)`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    width: 250px;
-    min-width: 100px;
-    margin: 2px 1px 0;
+const Link = styled(NavLink)<{ $mode: string }>`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    text-decoration: none;
-    font-size: 1.25em;
-    
-    ${mixins.dropShadow()}
+  width: 250px;
+  min-width: 100px;
+  margin: 2px 1px 0;
+
+  text-decoration: none;
+  font-size: 1.25em;
+
+  ${mixins.dropShadow()}
+  transition: all ${transDur};
+
+  .btn-bg {
+    background-color: #ccc;
+    ${mixins.abs()}
+
+    @media (${mixins.snapPts.minMed}) {
+      transform: skew(7.7deg);
+    }
+
+    z-index: -1;
     transition: all ${transDur};
+  }
 
+  .btn-text {
+    margin-top: 3px;
+    color: #0b1b31;
+    ${mixins.letterSpace()}
+
+    transition: all ${transDur};
+  }
+
+  &:hover {
     .btn-bg {
-        background-color: #ccc;
-        ${mixins.abs()}
-        
-        @media (${mixins.snapPts.minMed}) { transform: skew(7.7deg); }
-        
-        z-index: -1;
-        transition: all ${transDur};
+      background-color: #364f65;
     }
-
     .btn-text {
-        margin-top: 3px;
-        color: #0b1b31;
-        ${mixins.letterSpace()}
-
-        transition: all ${transDur};
+      color: white;
     }
+  }
+  &:active {
+    transform: translate(1px, 2px);
+  }
 
-    &:hover {
-        .btn-bg {
-            background-color: #364f65;
-        }
-        .btn-text {
-            color: white;
-        }
+  &.selected {
+    .btn-bg {
+      background-color: #364f65;
     }
-    &:active {
-        transform: translate(1px, 2px);
+    .btn-text {
+      color: white;
     }
+  }
 
-    &.selected {
-        .btn-bg {
-            background-color: #364f65;
-        }
-        .btn-text {
-            color: white;
-        }
-    }
-
-    ${props => props.$mode === headerMode.full && `
+  ${(props) =>
+    props.$mode === headerMode.full &&
+    `
         width: unset;
         min-width: 250px;
         margin: 5px 0;
@@ -103,14 +106,25 @@ const Link = styled(NavLink)`
             }
         }
     `}
-`
+`;
 
-export default function NavButton({to, text, mode}) {
-    
-    return (
-        <Link to={to} activeClassName="selected" $mode={mode}>
-            <div className="btn-bg"></div>
-            <div className="btn-text">{text}</div>
-        </Link>
-    )
+export default function NavButton({
+  to,
+  text,
+  mode,
+}: {
+  to: string;
+  text: string;
+  mode: string;
+}) {
+  return (
+    <Link
+      to={to}
+      className={({ isActive }) => (isActive ? "selected" : "")}
+      $mode={mode}
+    >
+      <div className="btn-bg"></div>
+      <div className="btn-text">{text}</div>
+    </Link>
+  );
 }

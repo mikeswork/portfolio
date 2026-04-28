@@ -9,9 +9,9 @@
       "path": "a#web",
       "content": [
         {
-          "thumbSrc": "./self-thumb.jpg",
+          "thumbSrc": "self-thumb.jpg",
           "info": {
-            "imgSrc": "./self.gif",
+            "imgSrc": "self.gif",
             "text": {
               "header": "This Portfolio",
               "paragraphs": [
@@ -26,9 +26,9 @@
           }
         },
         {
-          "thumbSrc": "./gamescom-thumb.jpg",
+          "thumbSrc": "gamescom-thumb.jpg",
           "info": {
-            "imgSrc": "./gamescom.jpg",
+            "imgSrc": "gamescom.jpg",
             "text": {
               "header": "Games.com",
               "paragraphs": [
@@ -39,9 +39,9 @@
           }
         },
         {
-          "thumbSrc": "./awards-thumb.jpg",
+          "thumbSrc": "awards-thumb.jpg",
           "info": {
-            "imgSrc": "./awards.jpg",
+            "imgSrc": "awards.jpg",
             "text": {
               "header": "Awards 2020",
               "paragraphs": [
@@ -56,9 +56,9 @@
           }
         },
         {
-          "thumbSrc": "./hallmark-thumb.jpg",
+          "thumbSrc": "hallmark-thumb.jpg",
           "info": {
-            "imgSrc": "./hallmark.jpg",
+            "imgSrc": "hallmark.jpg",
             "text": {
               "header": "Hallmark",
               "paragraphs": [
@@ -73,9 +73,9 @@
           }
         },
         {
-          "thumbSrc": "./hbo-thumb.jpg",
+          "thumbSrc": "hbo-thumb.jpg",
           "info": {
-            "imgSrc": "./hbo.jpg",
+            "imgSrc": "hbo.jpg",
             "text": {
               "header": "HBO",
               "paragraphs": [
@@ -90,9 +90,9 @@
           }
         },
         {
-          "thumbSrc": "./hub-thumb.jpg",
+          "thumbSrc": "hub-thumb.jpg",
           "info": {
-            "imgSrc": "./hub.jpg",
+            "imgSrc": "hub.jpg",
             "text": {
               "header": "Hub",
               "paragraphs": [
@@ -108,9 +108,9 @@
           }
         },
         {
-          "thumbSrc": "./shark-thumb.jpg",
+          "thumbSrc": "shark-thumb.jpg",
           "info": {
-            "imgSrc": "./shark-seal.jpg",
+            "imgSrc": "shark-seal.jpg",
             "text": {
               "header": "Shark Week",
               "paragraphs": [
@@ -121,9 +121,9 @@
           }
         },
         {
-          "thumbSrc": "./name-movie-thumb.jpg",
+          "thumbSrc": "name-movie-thumb.jpg",
           "info": {
-            "imgSrc": "./name-movie.jpg",
+            "imgSrc": "name-movie.jpg",
             "text": {
               "header": "Name the Movie",
               "paragraphs": [
@@ -138,9 +138,9 @@
           }
         },
         {
-          "thumbSrc": "./outlander-thumb.jpg",
+          "thumbSrc": "outlander-thumb.jpg",
           "info": {
-            "imgSrc": "./outlander.jpg",
+            "imgSrc": "outlander.jpg",
             "text": {
               "header": "Outlander",
               "paragraphs": [
@@ -275,7 +275,7 @@
         },
         {
           "title": "Winston",
-          "src": "https://www.youtube.com/embed/0iA0aykvtgo"
+          "src": "https://www.youtube.com/embed/dCajCwZs0pk"
         },
         {
           "title": "Carl Jung on Self-Knowledge",
