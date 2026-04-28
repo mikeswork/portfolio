@@ -1,5 +1,5 @@
-Portfolio
----------
+## Portfolio
+
 http://www.mikeswork.info
 
 This is a scalable, responsive site built in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.
