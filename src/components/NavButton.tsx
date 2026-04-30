@@ -35,7 +35,7 @@ const Link = styled(NavLink)<{ $mode: string }>`
   }
 
   .btn-text {
-    margin-top: 3px;
+    margin-top: 4px;
     color: #0b1b31;
     ${mixins.letterSpace()}
 
@@ -66,46 +66,46 @@ const Link = styled(NavLink)<{ $mode: string }>`
   ${(props) =>
     props.$mode === headerMode.full &&
     `
-        width: unset;
-        min-width: 250px;
-        margin: 5px 0;
-        
-        &:nth-child(2) {
-            min-width: 225px;
-        }
+      width: unset;
+      min-width: 250px;
+      margin: 5px 0;
+      
+      &:nth-child(2) {
+          min-width: 225px;
+      }
 
-        &:nth-child(3) {
-            min-width: 200px;
-        }
+      &:nth-child(3) {
+          min-width: 200px;
+      }
 
+      .btn-bg {
+        height: 0;
+        @media (${mixins.snapPts.minMed}) { transform: none; }
+        background-color: transparent;
+        border-top: 30px solid #ffffffcc;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+      }
+
+      &:hover {
         .btn-bg {
-            height: 0;
-            @media (${mixins.snapPts.minMed}) { transform: none; }
-            background-color: transparent;
-            border-top: 30px solid #ffffffcc;
-            border-right: 10px solid transparent;
-            border-left: 10px solid transparent;
+          transform: scaleX(1.05);
+          background-color: transparent;
+          border-top-color: #364f65;
         }
+      }
 
-        &:hover {
-            .btn-bg {
-                transform: scaleX(1.25);
-                background-color: transparent;
-                border-top-color: #364f65;
-            }
-        }
+      &:active {
+        transform: scale(0.9);
+      }
 
-        &:active {
-            transform: scale(0.9);
+      &.selected {
+        .btn-bg {
+          background-color: transparent;
+          border-top-color: #364f65;
         }
-
-        &.selected {
-            .btn-bg {
-                background-color: transparent;
-                border-top-color: #364f65;
-            }
-        }
-    `}
+      }
+  `}
 `;
 
 export default function NavButton({

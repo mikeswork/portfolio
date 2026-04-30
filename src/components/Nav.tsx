@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled, { css } from "styled-components";
 import NavButton from "./NavButton";
 import { headerMode } from "./Header";
@@ -8,7 +8,27 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 2px;
+`;
+
+const ButtonBorder = styled.div`
+  ${mixins.abs()}
+
+  border: 3px solid #ccc;
+  border-top: 0;
+
+  @media (${mixins.snapPts.minMed}) {
+    transform: skew(7.7deg);
+  }
+`;
+
+const Buttons = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 8vh;
+  padding: 0 4px 5px 4px;
 
   ${(props) =>
     props.$mode === headerMode.stickTop &&
@@ -16,24 +36,24 @@ const Container = styled.div`
 			flex-direction: row;
 			justify-content: center;
 			margin-bottom: unset;
-        `}
+  `}
 
   ${(props) =>
     props.$mode === headerMode.full &&
     !props.$suppressTwitch &&
     css`
       a:nth-child(1) {
-        ${mixins.twitchDown("2.5s", "15px")}
+        ${mixins.twitchDown("2.5s")}
       }
 
       a:nth-child(2) {
         min-width: 225px;
-        ${mixins.twitchDown("2.55s", "15px")}
+        ${mixins.twitchDown("2.55s")}
       }
 
       a:nth-child(3) {
         min-width: 200px;
-        ${mixins.twitchDown("2.6s", "15px")}
+        ${mixins.twitchDown("2.6s")}
       }
     `}
 `;
@@ -52,17 +72,20 @@ export default function Nav({ mode = headerMode.default, pages }) {
   };
 
   return (
-    <Container
-      $mode={mode}
-      onMouseOver={interactionTest}
-      onMouseOut={interactionTest}
-      $suppressTwitch={isInteracting}
-    >
-      {pages.map((page, i) => {
-        return (
-          <NavButton key={i} text={page.title} to={page.path} mode={mode} />
-        );
-      })}
+    <Container>
+      <Buttons
+        $mode={mode}
+        onMouseOver={interactionTest}
+        onMouseOut={interactionTest}
+        $suppressTwitch={isInteracting}
+      >
+        {mode !== headerMode.full && <ButtonBorder />}
+        {pages.map((page, i) => {
+          return (
+            <NavButton key={i} text={page.title} to={page.path} mode={mode} />
+          );
+        })}
+      </Buttons>
     </Container>
   );
 }
