@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import useScrolledTo from "../util/useScrolledTo";
+import useIsScrolledTo from "../util/useScrolledTo";
 import * as mixins from "../util/mixins";
 import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
 import topPng from "../img/mountains-abstract-top-bg.png";
@@ -12,7 +12,7 @@ const Sect = function ({ path = "", ...props }) {
   const navigate = useNavigate();
 
   // Toggle which section is indicated in the nav using the hash route
-  useScrolledTo(
+  useIsScrolledTo(
     `#${sectId} .header-hit, #${sectId} .footer-hit`,
     (isIntersecting: boolean) => {
       if (path && isIntersecting) navigate(path, { replace: true });

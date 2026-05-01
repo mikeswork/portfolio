@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
 import Email from "./components/Email";
-import useScrolledTo from "./util/useScrolledTo";
+import useIsScrolledTo from "./util/useScrolledTo";
 import LoadingIndicator from "./components/LoadingIndicator";
 import mountainBg from "./img/mountains-bg.jpg";
 import { snapPts } from "./util/mixins";
@@ -49,7 +49,7 @@ const AppContent = styled.div`
 export default function App() {
   const [showSecondHead, setShowSecondHead] = useState();
 
-  useScrolledTo(`#${pageData.header.path}`, (isIntersecting) =>
+  useIsScrolledTo(`#${pageData.header.path}`, (isIntersecting) =>
     setShowSecondHead(!isIntersecting),
   );
 
@@ -57,7 +57,7 @@ export default function App() {
   // We do this by triggering a Redirect to "/" using "atTop" state const, instead of
   // useHistory() because useHistory conflicts with Router at this level in the hierarchy.
   const [atTop, setAtTop] = useState();
-  useScrolledTo(`#${pageData.header.path} h1`, (isIntersecting) =>
+  useIsScrolledTo(`#${pageData.header.path} h1`, (isIntersecting) =>
     setAtTop(isIntersecting),
   );
 
