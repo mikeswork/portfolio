@@ -39,6 +39,7 @@ const Section = styled(Sect)`
   background-image: url(${bottomPng});
   background-position: center bottom;
   background-repeat: no-repeat;
+  background-size: contain;
 
   /* These two divs are needed to determine if user is looking at current section (useScrolledTo): */
   .header-hit,
@@ -59,6 +60,7 @@ const Section = styled(Sect)`
     background-image: url(${topPng});
     background-position: center top;
     background-repeat: no-repeat;
+    background-size: contain;
     text-align: center;
     font-size: 2.5em;
     ${mixins.letterSpace()}
