@@ -13,8 +13,9 @@ const Container = styled.div`
 
 const ButtonBorder = styled.div`
   ${mixins.abs()}
+  pointer-events: none;
 
-  border: 3px solid #ccc;
+  border: 4px solid #ccc;
   border-top: 0;
 
   @media (${mixins.snapPts.minMed}) {
@@ -28,7 +29,7 @@ const Buttons = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 8vh;
-  padding: 0 4px 5px 4px;
+  padding: 0 5px 4px 5px;
 
   ${(props) =>
     props.$mode === headerMode.stickTop &&
@@ -36,6 +37,11 @@ const Buttons = styled.div`
 			flex-direction: row;
 			justify-content: center;
 			margin-bottom: unset;
+
+      width: calc(100% - 10px);
+      @media (${mixins.snapPts.minMed}) {
+        width: unset;
+      }
   `}
 
   ${(props) =>
@@ -79,12 +85,12 @@ export default function Nav({ mode = headerMode.default, pages }) {
         onMouseOut={interactionTest}
         $suppressTwitch={isInteracting}
       >
-        {mode !== headerMode.full && <ButtonBorder />}
         {pages.map((page, i) => {
           return (
             <NavButton key={i} text={page.title} to={page.path} mode={mode} />
           );
         })}
+        {mode !== headerMode.full && <ButtonBorder />}
       </Buttons>
     </Container>
   );

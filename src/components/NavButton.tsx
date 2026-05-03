@@ -11,10 +11,18 @@ const Link = styled(NavLink)<{ $mode: string }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 
-  width: 250px;
+  ${(props) =>
+    props.$mode === headerMode.stickTop &&
+    `width: 100%;
+      @media (${mixins.snapPts.minMed}) {
+      width: 250px;
+    }`}
+
   min-width: 100px;
-  margin: 2px 1px 0;
 
   text-decoration: none;
   font-size: 1.25em;
@@ -22,13 +30,13 @@ const Link = styled(NavLink)<{ $mode: string }>`
   ${mixins.dropShadow()}
   transition: all ${transDur};
 
+  @media (${mixins.snapPts.minMed}) {
+    transform: skew(7.7deg);
+  }
+
   .btn-bg {
     background-color: #ccc;
     ${mixins.abs()}
-
-    @media (${mixins.snapPts.minMed}) {
-      transform: skew(7.7deg);
-    }
 
     z-index: -1;
     transition: all ${transDur};
@@ -40,6 +48,9 @@ const Link = styled(NavLink)<{ $mode: string }>`
     ${mixins.letterSpace()}
 
     transition: all ${transDur};
+    @media (${mixins.snapPts.minMed}) {
+      transform: skew(-7.7deg);
+    }
   }
 
   &:hover {
@@ -69,6 +80,7 @@ const Link = styled(NavLink)<{ $mode: string }>`
       width: unset;
       min-width: 250px;
       margin: 5px 0;
+      border: none;
       
       &:nth-child(2) {
           min-width: 225px;
@@ -78,13 +90,18 @@ const Link = styled(NavLink)<{ $mode: string }>`
           min-width: 200px;
       }
 
+      @media (${mixins.snapPts.minMed}) { transform: none; }
+
       .btn-bg {
         height: 0;
-        @media (${mixins.snapPts.minMed}) { transform: none; }
         background-color: transparent;
         border-top: 30px solid #ffffffcc;
         border-right: 10px solid transparent;
         border-left: 10px solid transparent;
+      }
+
+      .btn-text {
+        @media (${mixins.snapPts.minMed}) { transform: none; }
       }
 
       &:hover {
