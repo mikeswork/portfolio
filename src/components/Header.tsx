@@ -1,9 +1,9 @@
+import { NavHashLink as NavLink } from "react-router-hash-link";
 import Nav from "./Nav";
 import styled from "styled-components";
 import * as mixins from "../util/mixins";
 import Email from "./Email";
 import mountainBg from "../img/mountains-bg.jpg";
-import { NavLink } from "react-router-dom";
 
 export const headerMode = {
   default: "full",
@@ -56,49 +56,49 @@ const Container = styled.div<{ $visible: boolean; $mode: string }>`
   ${(props) =>
     props.$mode === headerMode.stickTop &&
     `
-        position: sticky;
-        top: 0;
-        height: unset;
+      position: sticky;
+      top: 0;
+      height: unset;
 
-        h1 {
-            margin: unset;
-            opacity: 1;
-            padding: 1vh 0 0;
-            font-size: 2em;
-            background-image: url(${mountainBg});
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-blend-mode: soft-light;
-            background-position-y: 45%;
-            background-color: #2d394a;
-            border-bottom: 5px solid #d9d9d9;
+      h1 {
+        margin: unset;
+        opacity: 1;
+        padding: 1vh 0 0;
+        font-size: 2em;
+        background-image: url(${mountainBg});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: soft-light;
+        background-position-y: 45%;
+        background-color: #2d394a;
+        border-bottom: 5px solid #d9d9d9;
 
-            @media (${mixins.snapPts.maxSmall}) {
-                font-size: 1.5em;
-                padding: 1vh 3vw;
-            }
+        @media (${mixins.snapPts.maxSmall}) {
+            font-size: 1.5em;
+            padding: 1vh 3vw;
         }
+      }
     `}
 
   ${(props) =>
     props.$mode === headerMode.stickBottom &&
     `
-        justify-content: flex-end;
-        position: sticky;
-        top: 80vh;
-        height: 20vh;
+      justify-content: flex-end;
+      position: sticky;
+      top: 80vh;
+      height: 20vh;
 
-        h1 {
-            margin: unset;
-            font-size: 2em;
-        }
+      h1 {
+        margin: unset;
+        font-size: 2em;
+      }
     `}
 
     ${(props) =>
     props.$visible === false &&
     `
-        opacity: 0;
-        transform: translateY(-30%);
+      opacity: 0;
+      transform: translateY(-30%);
     `}
 `;
 
@@ -107,6 +107,8 @@ export default function Header({
   visible = true,
   ...props
 }) {
+  const sectId = props.id?.split("#").pop();
+
   // The <h1> at the top will be a clickable NavLink if property "to" is set
   const headerEl = props.to ? (
     <Link to={props.to}>
@@ -117,7 +119,7 @@ export default function Header({
   );
 
   return (
-    <Container id={props.id} $visible={visible} $mode={mode}>
+    <Container id={sectId} $visible={visible} $mode={mode}>
       {headerEl}
 
       <Email visible={mode === headerMode.full} />

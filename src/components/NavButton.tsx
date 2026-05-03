@@ -1,7 +1,7 @@
+import { NavHashLink as NavLink } from "react-router-hash-link";
 import styled from "styled-components";
 import * as mixins from "../util/mixins";
 import { headerMode } from "./Header";
-import { NavLink } from "react-router-dom";
 
 const transDur = `0.1s`;
 
