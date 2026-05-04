@@ -26,6 +26,22 @@
           }
         },
         {
+          "thumbSrc": "uploader-thumb.jpg",
+          "info": {
+            "imgSrc": "uploader.png",
+            "text": {
+              "header": "Upload Folder Structure",
+              "paragraphs": [
+                "A customer wanted to upload a folder of documents and sub-folders, and for the directory structure to be preserved in our app. I wasn't able to find an existing package or solution that met our needs, so I built a drag-and-drop uploader that captures the folder structure and uploads the files to the server."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/folder-upload/blob/main/drag-drop-upload.js"
+              }
+            }
+          }
+        },
+        {
           "thumbSrc": "hila-thumb.jpg",
           "info": {
             "imgSrc": "hila.png",
