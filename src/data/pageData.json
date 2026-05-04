@@ -26,6 +26,33 @@
           }
         },
         {
+          "thumbSrc": "hila-thumb.jpg",
+          "info": {
+            "imgSrc": "hila.png",
+            "text": {
+              "header": "Hila",
+              "paragraphs": [
+                "I was asked to lead the UI development of this conversational finance tool. Initially, I built it as a quick proof of concept. But after acquiring 4,000 users, it became the company's flagship and we scaled it accordingly.",
+                "The UI's interactions with the backend were complex, since the responses were LLM-generated, containing data that could be visualized in both tables and charts (ECharts). To that end, we used the Chakra UI design system for React and TanStack Query to manage the data fetching and caching. In order to scale correctly, we needed to virtualize the responses and table data.",
+                "Since the frontend had LLM-access, I was able to come up with a feature that helps the user ask interesting questions, based on the financial data that's available to them."
+              ]
+            }
+          }
+        },
+        {
+          "thumbSrc": "marea-thumb.jpg",
+          "info": {
+            "imgSrc": "marea.png",
+            "text": {
+              "header": "Real Estate Appraisal",
+              "paragraphs": [
+                "As the sole frontend engineer building this tool, I was responsible for all architectural decisions and the UI implementation. Since the client was an enterprise company, we needed to operate within the constraints of their approved packages and the proprietary backend services they had available. I used React, Material UI, Leaflet, ECharts, and other packages to create a performant and scalable UI.",
+                "The greatest challenge was keeping up with the weekly progress reports as the client asked for complex data visualizations."
+              ]
+            }
+          }
+        },
+        {
           "thumbSrc": "gamescom-thumb.jpg",
           "info": {
             "imgSrc": "gamescom.jpg",
