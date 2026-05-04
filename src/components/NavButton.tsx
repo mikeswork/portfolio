@@ -62,7 +62,11 @@ const Link = styled(NavLink)<{ $mode: string }>`
     }
   }
   &:active {
-    transform: translate(1px, 2px);
+    @media (${mixins.snapPts.minMed}) {
+      transform: skew(7.7deg) scaleX(0.97) scaleY(0.91);
+    }
+
+    transform: scaleX(0.97) scaleY(0.91);
   }
 
   &.active {
@@ -113,7 +117,7 @@ const Link = styled(NavLink)<{ $mode: string }>`
       }
 
       &:active {
-        transform: scale(0.9);
+        transform: scale(0.95);
       }
 
       &.active {

@@ -23,10 +23,10 @@ export function twitchDown(delay = `0s`, distance = `20px`) {
         1% {
             transform: translateY(${distance});
         }
-        6% {
+        7% {
             transform: translateY(-3px)
         }
-        8% {
+        10% {
             transform: translateY(0);
         }
     `;
@@ -34,7 +34,7 @@ export function twitchDown(delay = `0s`, distance = `20px`) {
   return css`
     animation-name: ${twitch};
     animation-delay: ${delay};
-    animation-duration: 8s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   `;
