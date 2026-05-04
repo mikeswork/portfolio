@@ -69,7 +69,7 @@ const Resume = styled.div`
   }
 `;
 
-const ResumeContent = (props) => {
+const ResumeContent = () => {
   const skills = pageData.pages.resume.content.skills || [];
   const jobs = pageData.pages.resume.content.experience || [];
 
@@ -111,7 +111,7 @@ const ResumeContent = (props) => {
   );
 };
 
-const ResumeSection = (props) => {
+const ResumeSection = () => {
   return (
     <Section
       path={pageData.pages.resume.path}

@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const dot = (props) => {
+const dot = (props: { className?: string; delay: string }) => {
   return <span className={props.className}> . </span>;
 };
 
@@ -17,14 +17,14 @@ const Dot = styled(dot)`
   animation-delay: ${(props) => props.delay || `0s`};
 `;
 
-const indicator = (props) => {
+const indicator = () => {
   return (
-    <div className={props.className}>
+    <div>
       <Dot delay="0.3s" />
       <Dot delay="0.2s" />
       <Dot delay="0.1s" />
 
-      <span>{props.children || "Loading"}</span>
+      <span>Loading</span>
 
       <Dot delay="0.1s" />
       <Dot delay="0.2s" />

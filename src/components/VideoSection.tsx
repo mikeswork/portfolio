@@ -21,7 +21,7 @@ const Vid = styled.div`
   }
 `;
 
-const VideoContent = (props) => {
+const VideoContent = () => {
   const videos = pageData.pages.video.content || [];
   let vidId = 0;
 
@@ -44,7 +44,7 @@ const VideoContent = (props) => {
   );
 };
 
-const VideoSection = (props) => {
+const VideoSection = () => {
   return (
     <Section path={pageData.pages.video.path} title="Video (just for fun)">
       <VideoContent />

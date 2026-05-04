@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 
-export default function useIsScrolledTo(queryString, callback, thold = 0) {
+export default function useIsScrolledTo(
+  queryString: string,
+  callback: (isIntersecting: boolean) => void,
+  thold: number = 0,
+) {
   useEffect(() => {
     // console.log("[useEffect]")
     if (
@@ -8,7 +12,7 @@ export default function useIsScrolledTo(queryString, callback, thold = 0) {
       "IntersectionObserverEntry" in window &&
       "intersectionRatio" in window.IntersectionObserverEntry.prototype
     ) {
-      let observer = new IntersectionObserver(
+      const observer = new IntersectionObserver(
         (entries) => {
           callback(entries[0].isIntersecting);
         },

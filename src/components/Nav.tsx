@@ -23,7 +23,7 @@ const ButtonBorder = styled.div`
   }
 `;
 
-const Buttons = styled.div`
+const Buttons = styled.div<{ $mode: string; $suppressTwitch: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,10 +64,16 @@ const Buttons = styled.div`
     `}
 `;
 
-export default function Nav({ mode = headerMode.default, pages }) {
+export default function Nav({
+  mode = headerMode.default,
+  pages,
+}: {
+  mode?: string;
+  pages: Array<{ title: string; path: string }>;
+}) {
   const [isInteracting, setIsInteracting] = useState(false);
 
-  const interactionTest = (e) => {
+  const interactionTest = (e: React.MouseEvent) => {
     const event = e.nativeEvent.type;
 
     if (event === "mouseover" && !isInteracting) {

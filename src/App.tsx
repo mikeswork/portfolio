@@ -1,9 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import {
-  HashRouter as Router,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { HashRouter as Router, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Header, { headerMode } from "./components/Header";
 import Email from "./components/Email";
@@ -47,19 +43,19 @@ const AppContent = styled.div`
 `;
 
 export default function App() {
-  const [showSecondHead, setShowSecondHead] = useState();
+  const [showSecondHead, setShowSecondHead] = useState<boolean>();
 
   const headerId = pageData.header.path.split("#").pop();
 
-  useIsScrolledTo(`#${headerId}`, (isIntersecting) =>
+  useIsScrolledTo(`#${headerId}`, (isIntersecting: boolean) =>
     setShowSecondHead(!isIntersecting),
   );
 
   // When the user scrolls up to the top, the url/route needs to be reset to "/".
   // We do this by triggering a Redirect to "/" using "atTop" state const, instead of
   // useHistory() because useHistory conflicts with Router at this level in the hierarchy.
-  const [atTop, setAtTop] = useState();
-  useIsScrolledTo(`#${headerId} h1`, (isIntersecting) =>
+  const [atTop, setAtTop] = useState<boolean | null>(null);
+  useIsScrolledTo(`#${headerId} h1`, (isIntersecting: boolean) =>
     setAtTop(isIntersecting),
   );
 
@@ -124,7 +120,7 @@ export default function App() {
   );
 }
 
-function Redirect({ to = "/" }: { to: string }) {
+function Redirect({ to = "/" }: { to: string | null }) {
   const navigate = useNavigate();
   useEffect(() => {
     if (!to) return;
