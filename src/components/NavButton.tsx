@@ -65,7 +65,7 @@ const Link = styled(NavLink)<{ $mode: string }>`
     transform: translate(1px, 2px);
   }
 
-  &.selected {
+  &.active {
     .btn-bg {
       background-color: #364f65;
     }
@@ -116,7 +116,7 @@ const Link = styled(NavLink)<{ $mode: string }>`
         transform: scale(0.9);
       }
 
-      &.selected {
+      &.active {
         .btn-bg {
           background-color: transparent;
           border-top-color: #364f65;
@@ -135,11 +135,7 @@ export default function NavButton({
   mode: string;
 }) {
   return (
-    <Link
-      to={to}
-      className={({ isActive }) => (isActive ? "selected" : "")}
-      $mode={mode}
-    >
+    <Link to={to} $mode={mode}>
       <div className="btn-bg"></div>
       <div className="btn-text">{text}</div>
     </Link>
