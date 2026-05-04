@@ -102,6 +102,14 @@ const Container = styled.div<{ $visible: boolean; $mode: string }>`
     `}
 `;
 
+const BuckCreekTooltip = styled.div`
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  right: 5%;
+  height: 200px;
+`;
+
 export default function Header({
   mode = headerMode.default,
   visible = true,
@@ -120,6 +128,7 @@ export default function Header({
 
   return (
     <Container id={sectId} $visible={visible} $mode={mode}>
+      <BuckCreekTooltip title="Standing on the heights of Buck Creek Pass, I took this picture of Tenpeak Mountain and Glacier Peak. We got here after four days of hiking, hard on the body and even harder on the ego. Ask me to tell you this story some time." />
       {headerEl}
 
       <Email visible={mode === headerMode.full} />
