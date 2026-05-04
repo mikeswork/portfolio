@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "Michael Richardson - Web Dev",
+    "title": "Michael Richardson - Frontend Dev",
     "path": "a#header"
   },
   "pages": {
@@ -157,51 +157,65 @@
       "path": "c#resume",
       "content": {
         "skills": [
-          "HTML, CSS, JavaScript",
-          "TypeScript",
+          "UI for AI/LLM",
+          "State Management",
+          "Design Systems",
           "React (JS and Native)",
-          "jQuery",
-          "Backbone",
-          "Git",
-          "REST",
-          "Amazon Web Services",
-          "SQL",
-          "UI/UX design",
-          "C# and .NET",
-          "UWP and WPF",
-          "CPP experience",
+          "Fast API",
+          "UX Design",
+          "TypeScript",
+          "Docker",
+          "Figma",
+          "TanStack Query",
+          "Python",
           "Writing",
+          "REST",
+          "Node",
           "Photoshop",
+          "ECharts",
+          "C# and .NET",
           "Illustrator",
-          "After Effects (and JSX)",
-          "Video editing / publishing",
-          "Unity"
+          "SSO Integration",
+          "CPP Experience",
+          "After Effects"
         ],
         "experience": [
           {
-            "title": "Web/UI Developer",
-            "years": "9/2018 - 4/2020",
-            "company": "Exponential Entertainment Inc.",
+            "title": "Senior Frontend / AI Product Engineer",
+            "years": "10/2021 - 3/2026",
+            "company": "Vianai Systems",
             "responsibilities": [
-              "Built proof-of concept React site that hosted and integrated with Unity games. Challenges were learning how to create games in Unity, scaling content across devices, share user game preferences between multiple devices, and simulate a different virtual gamepad control for each unique game on mobile.",
-              "Used Amazon Web Services to enhance HTML 5 games (S3, DynamoDB, Lambda, and CDN).",
-              "Looked for opportunities to add value to the team by contributing my design and motion design experience. Using Photoshop and After Effects, I assisted designers by generating comps and visual content.",
-              "Created complicated, scalable web apps with images, sounds, videos, and advanced user interactions.",
-              "Designed and developed Alexa web app (architected, developed, UI, data, testing, etc.)",
-              "Worked in MVC architecture, using HTML, CSS, React, JavaScript, jQuery, and Backbone."
+              "Worked on AI-based platform, writing robust frontend code to handle dynamic, LLM-generated responses and guide the user toward effective prompting.",
+              "Headed UI development on multiple web apps, architecting the components, backend integration, data visualization, security, SSO, etc.",
+              "Worked closely with design, delivering UI with a professional fit and finish.",
+              "Worked with PM and Product Designer to ensure the UX engineering team was on track to desired vision.",
+              "Navigated the restrictions, limitations, and perplexities of enterprise projects."
             ]
           },
           {
-            "title": "Design Developer",
+            "title": "Senior Frontend Engineer",
+            "years": "9/2018 - 4/2020",
+            "company": "Exponential Entertainment Inc.",
+            "responsibilities": [
+              "Built proof-of concept React site that hosted and integrated with Unity games. Challenges were porting different versions to web, scaling content across devices, sharing user game preferences between multiple devices, and simulating a different virtual gamepad controller for each unique game.",
+              "Used Amazon Web Services to drive and enhance apps and games (S3, DynamoDB, Lambda, and CDN).",
+              "Added a bonus value to the team by contributing my design and motion design experience.",
+              "Created complicated, scalable web apps with images, sounds, videos, and advanced user interactions.",
+              "Designed and developed Alexa quiz game (architecture, code, UI, data, testing, etc.)",
+              "MVC architecture with HTML, CSS, React, JavaScript, jQuery, and Backbone."
+            ]
+          },
+          {
+            "title": "Frontend Engineer",
             "years": "1/2012 - 2/2018",
             "company": "Microsoft",
             "responsibilities": [
-              "Had ownership of the fit and finish (visuals, UI, accessibility, etc.) of the Windows 10 Photos app (XAML/C# UWP). My role was to discover and fix deviations from the design comps and help developers adhere to standards and requirements. I frequently met and worked with designers, project managers, and developers to ensure that the end-product met both visual and technical requirements. It was also my responsibility to assess new work items and assign them to other engineers.",
-              "Assisted designers by creating complex prototypes in order to test out concepts and ideas, using the best tool for each case: XAML/C#, HTML/JavaScript, etc.",
+              "Had ownership of the fit and finish (visuals, UI, accessibility, etc.) of the Windows 10 Photos app (XAML/C# UWP). My role was to hone the interface until it matched design comps and to help developers adhere to UI building standards and requirements.",
+              "Worked with designers, project managers, and developers to ensure that the end-product met both visual and technical requirements.",
+              "Assisted designers by creating complex prototypes to test out concepts and ideas, using the best tool for each case: XAML/C#, HTML/JavaScript, etc.",
               "Demonstrated having a good eye for matching product UI to comps, motion studies, etc.",
-              "Created complicated, scalable UI, adding motion and effects for user interactions (XAML and HTML).",
-              "Investigated and implemented new .NET API’s to keep our product aligned to evolving platform and design standards.",
-              "Instructed developers on how to follow proper UI coding procedures.",
+              "Created complicated, scalable UI, adding motion and effects for user interactions.",
+              "Investigated and implemented new .NET APIs to keep our product aligned to evolving platform and design standards.",
               "Worked in a complex development environment that required precise steps and methods to operate in.",
               "Trained new team members and helped them throughout the entire release cycle."
             ]
@@ -218,24 +232,19 @@
             ]
           },
           {
-            "title": "Multiple Advertising Agencies",
+            "title": "Frontend Engineer",
             "years": "2008 - 2011",
-            "company": "",
-            "responsibilities": [
-              "Web development for Lionfish, Evolve itv, Razorfish, RocketDog Communications, DNA, and Perfect Pixels Media Group.",
-              "Worked in fast-paced environments with many simultaneous projects and quick deadlines.",
-              "Familiar with quick turnaround and working in a team to deliver product to client on time."
-            ]
+            "company": "Multiple advertising agencies, including Lionfish, Evolve itv, Razorfish, RocketDog Communications, DNA, and Perfect Pixels Media Group",
+            "responsibilities": []
           },
           {
-            "title": "E-Learning Developer",
+            "title": "Frontend Engineer",
             "years": "8/2009 - 6/2010",
             "company": "Intrepid Learning Solutions",
             "responsibilities": [
               "Created interactive modules that were used in many e-learning sites.",
               "Worked with project management to troubleshoot online training sites and fix bugs.",
-              "Created graphics and designs in Photoshop.",
-              "Generated videos in After Effects and imported into e-learning modules."
+              "Generated and integrated graphics and videos (Photoshop, After Effects, etc.)"
             ]
           },
           {
@@ -243,19 +252,8 @@
             "years": "1/2009 - 4/2009",
             "company": "Contract at Microsoft Research",
             "responsibilities": [
-              "Created and designed website concepts in Photoshop and Illustrator.",
-              "Implemented and debugged experimental search engine that used feed of real Bing search results.",
-              "Created documents and graphics for print using InDesign."
-            ]
-          },
-          {
-            "title": "Web Developer",
-            "years": "9/2007 - 9/2008",
-            "company": "Contract at Microsoft Bing",
-            "responsibilities": [
-              "Developed site prototypes using different web technologies (HTML, CSS, XML, JavaScript, Ajax, and jQuery).",
-              "Used Flash and ActionScript to prototype various web user interfaces.",
-              "Created and designed visual effects for web UI."
+              "Met with researchers to understand new sites/features. Designed, iterated, and built UX.",
+              "Implemented and debugged an experimental search engine that used Bing feed."
             ]
           }
         ]
