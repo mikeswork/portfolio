@@ -87,12 +87,12 @@ const openLightbox = (info: Info) => {
 
   const closeBtn = document.createElement("img");
   closeBtn.style.cssText =
-    "position: absolute; top: 1vmin; right: 1vmin; width: 40px; filter: drop-shadow(3px 3px 5px black)";
+    "position: absolute; top: 1vmin; right: 1vmin; width: 40px; filter: drop-shadow(3px 3px 5px black); cursor: pointer;";
   closeBtn.src = closeBtnSvg;
   imgContainer.appendChild(closeBtn);
 
   const mainImg = document.createElement("img");
-  mainImg.style.cssText = "max-width: 95vw;";
+  mainImg.style.cssText = "max-width: 95vw; cursor: pointer;";
   mainImg.src = images(info.imgSrc);
 
   imgContainer.appendChild(mainImg);

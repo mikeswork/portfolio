@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import useIsScrolledTo from "../util/useScrolledTo";
 import * as mixins from "../util/mixins";
-import bottomPng from "../img/mountains-abstract-bottom-bg-2.png";
-import topPng from "../img/mountains-abstract-top-bg.png";
+import bottomPng from "../img/mountains-abstract-bottom-bg-3.png";
+import topPng from "../img/mountains-abstract-top-bg-2.png";
 
 const Sect = function ({ path = "", ...props }) {
   // console.log("rendering", path, "section")
