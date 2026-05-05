@@ -131,9 +131,9 @@ export default function Header({
       <BuckCreekTooltip title="Standing on the heights of Buck Creek Pass, I took this picture of Tenpeak Mountain and Glacier Peak. We got here after four days of hiking, hard on the body and even harder on the ego. Ask me to tell you this story some time." />
       {headerEl}
 
-      <Email visible={mode === headerMode.full} />
-
       <Nav pages={props.navPages} mode={mode} />
+
+      <Email visible={mode === headerMode.full} />
     </Container>
   );
 }
