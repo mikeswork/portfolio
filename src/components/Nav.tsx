@@ -65,6 +65,7 @@ const Buttons = styled.div<{ $mode: string; $isInteracting: boolean }>`
     `
 			flex-direction: row;
 			justify-content: center;
+      margin-top: unset;
 			margin-bottom: unset;
 
       width: calc(100% - 10px);
