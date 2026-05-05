@@ -87,17 +87,17 @@ const Link = styled(NavLink)<{ $mode: string }>`
       border: none;
       
       &:nth-child(1) {
-        clip-path: polygon(35px 1px, 50% 0, calc(100% - 35px) 1px, calc(100% - 15px) 100%, 15px 100%);
+        clip-path: polygon(50px 1px, 50% 0, calc(100% - 50px) 1px, calc(100% - 30px) 100%, 30px 100%);
         
       }
       
       &:nth-child(2) {
-        clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0 50%);
+        clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0 50%);
         
       }
 
       &:nth-child(3) {
-        clip-path: polygon(15px 0, calc(100% - 15px) 0, calc(100% - 35px) calc(100% - 1px), 50% 100%, 35px calc(100% - 1px));
+        clip-path: polygon(10px 0, calc(100% - 10px) 0, calc(100% - 30px) calc(100% - 1px), 50% 100%, 30px calc(100% - 1px));
       }
 
       @media (${mixins.snapPts.minMed}) { transform: none; }

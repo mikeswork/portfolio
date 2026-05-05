@@ -56,7 +56,8 @@ const Buttons = styled.div<{ $mode: string; $isInteracting: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 8vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   padding: 0 5px 4px 5px;
 
   ${(props) =>
