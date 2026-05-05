@@ -28,7 +28,8 @@ const Buttons = styled.div<{ $mode: string; $suppressTwitch: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 8vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   padding: 0 5px 4px 5px;
 
   ${(props) =>
@@ -36,6 +37,7 @@ const Buttons = styled.div<{ $mode: string; $suppressTwitch: boolean }>`
     `
 			flex-direction: row;
 			justify-content: center;
+      margin-top: unset;
 			margin-bottom: unset;
 
       width: calc(100% - 10px);
