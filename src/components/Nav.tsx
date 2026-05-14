@@ -105,7 +105,7 @@ export default function Nav({
   };
 
   return (
-    <Container>
+    <Container id="navContainer">
       <Buttons
         $mode={mode}
         onMouseOver={interactionTest}

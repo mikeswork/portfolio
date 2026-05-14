@@ -55,7 +55,7 @@ export default function App() {
   // We do this by triggering a Redirect to "/" using "atTop" state const, instead of
   // useHistory() because useHistory conflicts with Router at this level in the hierarchy.
   const [atTop, setAtTop] = useState<boolean | null>(null);
-  useIsScrolledTo(`#${headerId} h1`, (isIntersecting: boolean) =>
+  useIsScrolledTo(`#${headerId} #navContainer`, (isIntersecting: boolean) =>
     setAtTop(isIntersecting),
   );
 
