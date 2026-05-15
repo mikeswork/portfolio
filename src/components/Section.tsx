@@ -32,11 +32,13 @@ const Sect = function ({ path = "", ...props }) {
   );
 };
 
-const Section = styled(Sect)`
+const Section = styled(Sect)<{ style?: "default" | "black" }>`
   position: relative;
   min-height: 50vh;
-  background-color: #000e1c;
-  background-image: url(${bottomPng});
+  background-color: ${(props) =>
+    props.style === "black" ? "unset" : "#000e1c"};
+  background-image: ${(props) =>
+    props.style === "black" ? "none" : `url(${bottomPng})`};
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -57,7 +59,8 @@ const Section = styled(Sect)`
   h2 {
     margin: 0;
     padding: 14vh 0 0;
-    background-image: url(${topPng});
+    background-image: ${(props) =>
+      props.style === "black" ? "none" : `url(${topPng})`};
     background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;

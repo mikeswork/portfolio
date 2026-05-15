@@ -19,10 +19,10 @@ const Link = styled(NavLink)<{ $mode: string }>`
     props.$mode === headerMode.stickTop &&
     `width: 100%;
       @media (${mixins.snapPts.minMed}) {
-      width: 250px;
+      width: 220px;
     }`}
 
-  min-width: 100px;
+  min-width: 5px;
 
   text-decoration: none;
   font-size: 1.25em;
@@ -83,26 +83,26 @@ const Link = styled(NavLink)<{ $mode: string }>`
     `
       width: unset;
       min-width: 250px;
-      margin: 5px 0;
+      margin: 3px 0;
       border: none;
       
+      &:nth-child(1) {
+        clip-path: polygon(50px 1px, 50% 0, calc(100% - 50px) 1px, calc(100% - 30px) 100%, 30px 100%);
+      }
+      
       &:nth-child(2) {
-          min-width: 225px;
+        min-width: 300px;
+        clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0 50%);
       }
 
       &:nth-child(3) {
-          min-width: 200px;
+        clip-path: polygon(10px 0, calc(100% - 10px) 0, calc(100% - 30px) 100%, 50% 100%, 30px 100%);
+      }
+      &:nth-child(4) {
+        clip-path: polygon(75px 0, calc(100% - 75px) 0, calc(100% - 95px) 100%, 50% 100%, 95px 100%);
       }
 
       @media (${mixins.snapPts.minMed}) { transform: none; }
-
-      .btn-bg {
-        height: 0;
-        background-color: transparent;
-        border-top: 30px solid #ffffffcc;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-      }
 
       .btn-text {
         @media (${mixins.snapPts.minMed}) { transform: none; }
@@ -110,9 +110,25 @@ const Link = styled(NavLink)<{ $mode: string }>`
 
       &:hover {
         .btn-bg {
-          transform: scaleX(1.05);
-          background-color: transparent;
-          border-top-color: #364f65;
+          background-color: #ddd; 
+        }
+        .btn-text {
+          color: #0b1b31;
+          transform: scaleX(0.97);
+        }
+        
+        transform: scaleX(1.07);
+        &:nth-child(1) {
+          transform: scaleX(1.07) translateY(-2px);
+        }
+        &:nth-child(2) {
+          transform: scaleX(1.07) scaleY(1.05);
+        }
+        &:nth-child(3) {
+          transform: scaleX(1.07) translateY(1px);
+        }
+        &:nth-child(4) {
+          transform: scaleX(1.07) translateY(3px);
         }
       }
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import NavButton from "./NavButton";
 import { headerMode } from "./Header";
 import * as mixins from "../util/mixins";
@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-bottom: 2px;
+  perspective: 1000px;
 `;
 
 const ButtonBorder = styled.div`
@@ -23,7 +24,34 @@ const ButtonBorder = styled.div`
   }
 `;
 
-const Buttons = styled.div<{ $mode: string; $suppressTwitch: boolean }>`
+const hover = keyframes`
+  0% {
+      transform: translateX(0px) translateY(0px) translateZ(0px);
+  }
+  15% {
+      transform: translateX(1px) translateY(15px) translateZ(5px) rotateZ(-0.5deg);
+  }
+  30% {
+      transform: translateX(2px) translateY(5px) translateZ(10px);
+  }
+  45% {
+      transform: translateX(0px) translateY(30px) translateZ(30px) rotateZ(0.5deg);
+  }
+  60% {
+      transform: translateX(1px) translateY(-10px) translateZ(0px);
+  }
+  75% {
+      transform: translateX(-2px) translateY(5px) translateZ(-10px) rotateZ(-0.5deg);
+  }
+  90% {
+      transform: translateX(0px) translateY(-10px) translateZ(1px);
+  }
+  100% {
+      transform: translateX(0px) translateY(0px) translateZ(0px);
+  }
+`;
+
+const Buttons = styled.div<{ $mode: string; $isInteracting: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -48,21 +76,12 @@ const Buttons = styled.div<{ $mode: string; $suppressTwitch: boolean }>`
 
   ${(props) =>
     props.$mode === headerMode.full &&
-    !props.$suppressTwitch &&
     css`
-      a:nth-child(1) {
-        ${mixins.twitchDown("2.5s")}
-      }
-
-      a:nth-child(2) {
-        min-width: 225px;
-        ${mixins.twitchDown("2.55s")}
-      }
-
-      a:nth-child(3) {
-        min-width: 200px;
-        ${mixins.twitchDown("2.6s")}
-      }
+      animation-name: ${hover};
+      animation-delay: 0s;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.27, 0.01, 0.74, 0.99);
     `}
 `;
 
@@ -86,12 +105,12 @@ export default function Nav({
   };
 
   return (
-    <Container>
+    <Container id="navContainer">
       <Buttons
         $mode={mode}
         onMouseOver={interactionTest}
         onMouseOut={interactionTest}
-        $suppressTwitch={isInteracting}
+        $isInteracting={isInteracting}
       >
         {pages.map((page, i) => {
           return (
