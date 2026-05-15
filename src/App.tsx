@@ -13,6 +13,7 @@ import pageData from "./data/pageData.json";
 const WebSection = React.lazy(() => import("./components/WebSection"));
 const ResumeSection = React.lazy(() => import("./components/ResumeSection"));
 const VideoSection = React.lazy(() => import("./components/VideoSection"));
+const BookSection = React.lazy(() => import("./components/BookSection"));
 
 const AppContent = styled.div`
   background-image: url(${mountainBg});
@@ -71,6 +72,7 @@ export default function App() {
             pageData.pages.web,
             pageData.pages.resume,
             pageData.pages.video,
+            pageData.pages.book,
           ]}
         />
 
@@ -83,40 +85,40 @@ export default function App() {
             pageData.pages.web,
             pageData.pages.resume,
             pageData.pages.video,
+            pageData.pages.book,
           ]}
         />
 
-        <Suspense
-          fallback={
-            <div style={{ textAlign: "center" }}>
-              <LoadingIndicator />
-            </div>
-          }
-        >
+        <Loader>
           <WebSection />
-        </Suspense>
-        <Suspense
-          fallback={
-            <div style={{ textAlign: "center" }}>
-              <LoadingIndicator />
-            </div>
-          }
-        >
+        </Loader>
+        <Loader>
           <ResumeSection />
-        </Suspense>
-        <Suspense
-          fallback={
-            <div style={{ textAlign: "center" }}>
-              <LoadingIndicator />
-            </div>
-          }
-        >
+        </Loader>
+        <Loader>
           <VideoSection />
-        </Suspense>
+        </Loader>
+        <Loader>
+          <BookSection />
+        </Loader>
 
         <Email margin="1em 0 3em" />
       </AppContent>
     </Router>
+  );
+}
+
+function Loader({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense
+      fallback={
+        <div style={{ textAlign: "center" }}>
+          <LoadingIndicator />
+        </div>
+      }
+    >
+      {children}
+    </Suspense>
   );
 }
 

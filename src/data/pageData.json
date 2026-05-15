@@ -323,6 +323,14 @@
           "src": "https://www.youtube.com/embed/GIgELuEYB_A"
         }
       ]
+    },
+    "book": {
+      "title": "Book",
+      "path": "e#book",
+      "content": {
+        "videoFile": "shelves_shorter.mp4",
+        "link": "https://ryanblogger.space"
+      }
     }
   }
 }
