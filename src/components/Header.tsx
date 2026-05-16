@@ -4,6 +4,7 @@ import styled from "styled-components";
 import * as mixins from "../util/mixins";
 import Email from "./Email";
 import mountainBg from "../img/mountains-bg.jpg";
+import HikerWidget from "./HikerWidget";
 
 export const headerMode = {
   default: "full",
@@ -19,6 +20,7 @@ const Link = styled(NavLink)`
 
 const Container = styled.div<{ $visible: boolean; $mode: string }>`
   z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -102,14 +104,6 @@ const Container = styled.div<{ $visible: boolean; $mode: string }>`
     `}
 `;
 
-const BuckCreekTooltip = styled.div`
-  position: absolute;
-  top: 25%;
-  left: 5%;
-  right: 5%;
-  height: 200px;
-`;
-
 export default function Header({
   mode = headerMode.default,
   visible = true,
@@ -120,20 +114,38 @@ export default function Header({
   // The <h1> at the top will be a clickable NavLink if property "to" is set
   const headerEl = props.to ? (
     <Link to={props.to}>
-      <h1>{props.title}</h1>
+      <HeaderWithHiker
+        title={props.title}
+        showHiker={mode === headerMode.full}
+      />
     </Link>
   ) : (
-    <h1>{props.title}</h1>
+    <HeaderWithHiker title={props.title} showHiker={mode === headerMode.full} />
   );
 
   return (
     <Container id={sectId} $visible={visible} $mode={mode}>
-      <BuckCreekTooltip title="Standing on the heights of Buck Creek Pass, I took this picture of Tenpeak Mountain and Glacier Peak. We got here after four days of hiking, hard on the body and even harder on the ego. Ask me to tell you this story some time." />
       {headerEl}
 
       <Nav pages={props.navPages} mode={mode} />
 
       <Email visible={mode === headerMode.full} />
     </Container>
+  );
+}
+
+function HeaderWithHiker({
+  title,
+  showHiker = false,
+}: {
+  title: string;
+  showHiker?: boolean;
+}) {
+  return (
+    <div style={{ position: "relative" }}>
+      <h1>{title}</h1>
+
+      {showHiker && <HikerWidget />}
+    </div>
   );
 }
