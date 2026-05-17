@@ -11,7 +11,7 @@ const Vid = styled.video<{ openMode: boolean }>`
   width: clamp(200px, 90vw, 622px);
   cursor: ${(props) => (props.openMode ? "zoom-in" : "pointer")};
 
-  transition: 3s all;
+  transition: 3s transform;
   &:hover {
     transform: scale(1.1);
   }
