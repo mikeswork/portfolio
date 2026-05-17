@@ -31,17 +31,14 @@ const HikerSpot = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   z-index: 2;
 
-  @media only screen and (${snapPts.maxLarge}) {
-  }
   @media only screen and (${snapPts.maxMed}) {
     top: 22vw;
   }
   @media only screen and (${snapPts.maxSmall}) {
-    top: 24vw;
-    right: 10px;
+    top: 30vw;
+    right: 28px;
   }
 
   &:hover ${HikerTooltip} {
