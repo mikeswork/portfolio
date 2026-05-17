@@ -11,17 +11,31 @@
         {
           "thumbSrc": "self-thumb.jpg",
           "info": {
-            "imgSrc": "self.gif",
+            "imgSrc": "self.jpg",
             "text": {
-              "header": "This Portfolio",
+              "header": "Portfolio",
               "paragraphs": [
-                "The site you are looking at--built scalable and responsive in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
+                "Built scalable and responsive in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
                 "It was an interesting challenge to have a floating header, which is initially hidden, and then displays to indicate the current section as the user browses through them (either by scrolling down the page or by using the navigation buttons). The right strategy turned out to be using the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly (which display/hide the floating header and highlight the nav button of the section currently being viewed). Extracting this \"effect\" logic out into util/useScrolledTo.js, and importing it as a state hook in the components that should respond to scrolling, felt like an elegant approach."
               ],
               "gitHub": {
                 "text": "See Code on GitHub",
                 "url": "https://github.com/mikeswork/portfolio"
               }
+            }
+          }
+        },
+        {
+          "thumbSrc": "hila-thumb.jpg",
+          "info": {
+            "imgSrc": "hila.png",
+            "text": {
+              "header": "Hila",
+              "paragraphs": [
+                "I was asked to lead the UI development of this conversational finance tool. Initially, I built it as a quick proof of concept. But after acquiring 4,000 users, it became the company's flagship and we scaled it accordingly.",
+                "The UI's interactions with the backend were complex, since the responses were LLM-generated, containing data that could be visualized in both tables and charts (ECharts). To that end, we used the Chakra UI design system for React and TanStack Query to manage the data fetching and caching. In order to scale correctly, we needed to virtualize the responses and table data.",
+                "Since the frontend had LLM-access, I was able to come up with a feature that helps the user ask interesting questions, based on the financial data that's available to them."
+              ]
             }
           }
         },
@@ -38,20 +52,6 @@
                 "text": "See Code on GitHub",
                 "url": "https://github.com/mikeswork/folder-upload/blob/main/drag-drop-upload.js"
               }
-            }
-          }
-        },
-        {
-          "thumbSrc": "hila-thumb.jpg",
-          "info": {
-            "imgSrc": "hila.png",
-            "text": {
-              "header": "Hila",
-              "paragraphs": [
-                "I was asked to lead the UI development of this conversational finance tool. Initially, I built it as a quick proof of concept. But after acquiring 4,000 users, it became the company's flagship and we scaled it accordingly.",
-                "The UI's interactions with the backend were complex, since the responses were LLM-generated, containing data that could be visualized in both tables and charts (ECharts). To that end, we used the Chakra UI design system for React and TanStack Query to manage the data fetching and caching. In order to scale correctly, we needed to virtualize the responses and table data.",
-                "Since the frontend had LLM-access, I was able to come up with a feature that helps the user ask interesting questions, based on the financial data that's available to them."
-              ]
             }
           }
         },
