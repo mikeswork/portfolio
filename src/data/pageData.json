@@ -15,7 +15,7 @@
             "text": {
               "header": "Portfolio",
               "paragraphs": [
-                "Built scalable and responsive in React using the Styled Components, DOM Router, Router Hash Links, SASS, and Basiclightbox node packages.",
+                "Built scalable and responsive in React using Styled Components (I started it when Styled Components were all the rage; they still get the job done), DOM Router, Router Hash Links, SASS, and Basiclightbox.",
                 "It was an interesting challenge to have a floating header, which is initially hidden, and then displays to indicate the current section as the user browses through them (either by scrolling down the page or by using the navigation buttons). The right strategy turned out to be using the DOM IntersectionObserver object to keep track of where the user is in the overall page and then to make visual/route updates accordingly (which display/hide the floating header and highlight the nav button of the section currently being viewed). Extracting this \"effect\" logic out into util/useScrolledTo.js, and importing it as a state hook in the components that should respond to scrolling, felt like an elegant approach."
               ],
               "gitHub": {
@@ -33,9 +33,30 @@
               "header": "Hila",
               "paragraphs": [
                 "I was asked to lead the UI development of this conversational finance tool. Initially, I built it as a quick proof of concept. But after acquiring 4,000 users, it became the company's flagship and we scaled it accordingly.",
-                "The UI's interactions with the backend were complex, since the responses were LLM-generated, containing data that could be visualized in both tables and charts (ECharts). To that end, we used the Chakra UI design system for React and TanStack Query to manage the data fetching and caching. In order to scale correctly, we needed to virtualize the responses and table data.",
+                "The UI's interactions with the backend were complex, since the responses were LLM-generated, containing data that could be visualized in both tables and charts (ECharts). To that end, we used the Chakra UI design system for React and TanStack Query to manage the data fetching and caching. In order to scale correctly, we virtualized the responses and table data.",
                 "Since the frontend had LLM-access, I was able to come up with a feature that helps the user ask interesting questions, based on the financial data that's available to them."
-              ]
+              ],
+              "external": {
+                "text": "Learn More About Hila",
+                "url": "https://www.vian.ai/hila-platform"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "astrolites-thumb.jpg",
+          "info": {
+            "imgSrc": "astrolites.jpg",
+            "text": {
+              "header": "All Brave Astrolites",
+              "paragraphs": [
+                "A companion site to a book of short stories that I wrote.",
+                "I built it in WordPress, using the Divi plugin, which allowed me to quickly and uniquely style the page for each story, with its own imagery, colors, fonts, etc. Divi's system of themes, pages, and modules made it the right choice for this project."
+              ],
+              "external": {
+                "text": "Take a Look",
+                "url": "https://ryanblogger.space"
+              }
             }
           }
         },
@@ -82,6 +103,28 @@
           }
         },
         {
+          "thumbSrc": "hub-thumb.jpg",
+          "info": {
+            "imgSrc": "hub.jpg",
+            "text": {
+              "header": "Hub",
+              "paragraphs": [
+                "This was an ambitious project with many moving parts, which I built with one other dev (we both worked on all the components). By developing an easily customizable site, we succeeded at creating an experience that users would want to play in and return to. An administrator is able to keep things fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and spotlighting different games. To further improve retention, each user automatically gets a default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. After they decide to register their account, they receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various fun items (some animated via gifs or a sprite player).",
+                "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
+                "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (i.e. css/js animation vs. video)."
+              ],
+              "gitHub": {
+                "text": "See Code on GitHub",
+                "url": "https://github.com/mikeswork/games/tree/master/hub"
+              },
+              "external": {
+                "text": "Exponential Entertainment Inc.",
+                "url": "https://www.vian.ai/hila-platform"
+              }
+            }
+          }
+        },
+        {
           "thumbSrc": "awards-thumb.jpg",
           "info": {
             "imgSrc": "awards.jpg",
@@ -94,6 +137,10 @@
               "gitHub": {
                 "text": "See Code on GitHub",
                 "url": "https://github.com/mikeswork/games/tree/master/awards"
+              },
+              "external": {
+                "text": "Exponential Entertainment Inc.",
+                "url": "https://www.vian.ai/hila-platform"
               }
             }
           }
@@ -133,24 +180,6 @@
           }
         },
         {
-          "thumbSrc": "hub-thumb.jpg",
-          "info": {
-            "imgSrc": "hub.jpg",
-            "text": {
-              "header": "Hub",
-              "paragraphs": [
-                "This was an ambitious project with many moving parts, which I built with one other dev (we both worked on all the components). By developing an easily customizable site, we succeeded at creating an experience that users would want to play in and return to. An administrator is able to keep things fresh by changing skins (e.g. for different holidays, sporting events, etc.), adding rewards, featuring contests, and spotlighting different games. To further improve retention, each user automatically gets a default account that keeps track of their points. They earn points by visiting certain areas, completing games, or achieving minimum scores. After they decide to register their account, they receive different rewards as their skill lever increases. Rewards allow users to customize their home screen with various fun items (some animated via gifs or a sprite player).",
-                "Since we had to support limited hardware, none of the existing Node or JavaScript sprite player solutions worked for us. So I built a lightweight, reusable player that allowed us to do custom animations (with settings such as loop/play once, speed, delay, delay between play-throughs, etc.)",
-                "In preparation for a major release, I investigated the best approach for adding more rooms/sections to the experience and discovered the most intuitive technique for a visual transition between the spaces (i.e. css/js animation vs. video)."
-              ],
-              "gitHub": {
-                "text": "See Code on GitHub",
-                "url": "https://github.com/mikeswork/games/tree/master/hub"
-              }
-            }
-          }
-        },
-        {
           "thumbSrc": "shark-thumb.jpg",
           "info": {
             "imgSrc": "shark-seal.jpg",
@@ -176,6 +205,10 @@
               "gitHub": {
                 "text": "See Code on GitHub",
                 "url": "https://github.com/mikeswork/games/tree/master/alexa"
+              },
+              "external": {
+                "text": "See it on Amazon",
+                "url": "https://www.amazon.com/Exponential-Entertainment-Name-the-Movie/dp/B07Z6QJVTF"
               }
             }
           }
