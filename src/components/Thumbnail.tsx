@@ -4,6 +4,8 @@ import { snapPts, dropShadow } from "../util/mixins";
 import closeBtnSvg from "../img/close-btn.svg";
 import githubBgPng from "../img/github-bg.png";
 import { images } from "../util/helpers";
+import { createRoot } from "react-dom/client";
+import LoadingIndicator from "./LoadingIndicator";
 
 interface GitHub {
   url: string;
@@ -83,19 +85,53 @@ const openLightbox = (info: Info) => {
     "display: flex; flex-direction: column; align-items: center; max-height: 100vh; overflow-y: auto;";
 
   const imgContainer = document.createElement("div");
-  imgContainer.style.cssText = "position: relative; margin: 1vmin;";
+  imgContainer.style.cssText =
+    "position: relative; margin: 1vmin; min-width: 300px; min-height: 200px;";
+
+  const mainImg = document.createElement("img");
+  mainImg.style.cssText =
+    "max-width: 95vw; cursor: pointer; visibility: hidden;";
+
+  // container for mounting the React LoadingIndicator
+  const loaderContainer = document.createElement("div");
+  loaderContainer.style.cssText =
+    "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;";
 
   const closeBtn = document.createElement("img");
   closeBtn.style.cssText =
-    "position: absolute; top: 1vmin; right: 1vmin; width: 40px; filter: drop-shadow(3px 3px 5px black); cursor: pointer;";
+    "position: absolute; top: 1vmin; right: 1vmin; width: 30px; filter: drop-shadow(3px 3px 5px black); cursor: pointer; z-index: 1;";
   closeBtn.src = closeBtnSvg;
-  imgContainer.appendChild(closeBtn);
-
-  const mainImg = document.createElement("img");
-  mainImg.style.cssText = "max-width: 95vw; cursor: pointer;";
-  mainImg.src = images(info.imgSrc);
 
   imgContainer.appendChild(mainImg);
+  imgContainer.appendChild(loaderContainer);
+  imgContainer.appendChild(closeBtn);
+
+  // mount the React LoadingIndicator into the loader container
+  let loaderRoot: any = null;
+  try {
+    loaderRoot = createRoot(loaderContainer);
+    loaderRoot.render(<LoadingIndicator />);
+  } catch (e) {
+    // fallback: show text if mounting fails
+    loaderContainer.textContent = "Loading...";
+  }
+
+  // show image and unmount loader when finished
+  mainImg.onload = () => {
+    if (loaderRoot) loaderRoot.unmount();
+    loaderContainer.remove();
+    mainImg.style.visibility = "visible";
+  };
+
+  mainImg.onerror = () => {
+    if (loaderRoot) loaderRoot.unmount();
+    loaderContainer.textContent = "Failed to load image";
+    loaderContainer.style.color = "#d8d8d8";
+  };
+
+  // set the src after handlers are attached so loader is visible while downloading
+  mainImg.src = images(info.imgSrc);
+
   mainDiv.appendChild(imgContainer);
 
   if (info.text) {
@@ -157,6 +193,8 @@ const Thumbnail = styled(thumb)`
   position: relative;
   margin: 0 0 30px;
   padding: 2px;
+  min-width: 300px;
+  min-height: 200px;
   background-color: #d1d4d8;
   clip-path: ${clipPath};
   cursor: pointer;

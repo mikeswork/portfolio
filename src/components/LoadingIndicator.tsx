@@ -17,9 +17,14 @@ const Dot = styled(dot)`
   animation-delay: ${(props) => props.delay || `0s`};
 `;
 
-const indicator = () => {
+const Container = styled("div")`
+  color: white;
+  padding: 40px 10px;
+`;
+
+const Indicator = () => {
   return (
-    <div>
+    <Container>
       <Dot delay="0.3s" />
       <Dot delay="0.2s" />
       <Dot delay="0.1s" />
@@ -29,12 +34,8 @@ const indicator = () => {
       <Dot delay="0.1s" />
       <Dot delay="0.2s" />
       <Dot delay="0.3s" />
-    </div>
+    </Container>
   );
 };
-
-const Indicator = styled(indicator)`
-  font-size: 1.5em;
-`;
 
 export default Indicator;
