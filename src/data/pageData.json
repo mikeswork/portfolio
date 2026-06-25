@@ -98,7 +98,28 @@
               "paragraphs": [
                 "A React site that loads Unity WebGL games. Obviously, it was vital to make sure that both the overall UI and the games themselves were responsive and displayed correctly on all devices, including mobile. For the latter, I created a virtual gamepad that could be used interchangeably and customized for each game requirements.",
                 "An additional layer of complexity was that the client wanted to store the settings and user's progress for each game, which would allow a seamless experience when changing devices. I met this requirement by creating a JavaScript control layer between the React site and Unity content. I used the IndexedDB browser API to capture game data, save it to an AWS database, and load it into IndexedDB on each device that the user logged in on."
-              ]
+              ],
+              "external": {
+                "text": "My Own",
+                "url": "https://www.exponentialent.com/showcase"
+              }
+            }
+          }
+        },
+        {
+          "thumbSrc": "asteroid-thumb.jpg",
+          "info": {
+            "imgSrc": "asteroid.jpg",
+            "text": {
+              "header": "Asteroid Hunter",
+              "paragraphs": [
+                "A WebGL game I built in Unity. The concept came by accident while I was playing around with the Unity engine and noticed that simply floating around in 3D space was a lot of fun.",
+                "The challenge was learning Unity, scripting game logic in C#, and getting the web experience to run smoothly. Fortunately, the engine is intuitive and the object oriented approach keeps everything organized."
+              ],
+              "external": {
+                "text": "Play The Game!",
+                "url": "https://mikeswork.info/asteroid-hunter"
+              }
             }
           }
         },
